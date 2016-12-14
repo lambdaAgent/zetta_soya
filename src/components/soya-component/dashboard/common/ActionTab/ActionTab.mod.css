@@ -1,0 +1,57 @@
+.expand-table-bind {
+  width: 100%;
+}
+.tabMargin {
+  margin-left: 0px;
+}
+.panel-tab {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  white-space: nowrap;
+}
+.panel-tab li {
+  display: inline-block;
+  margin-right: 5px;
+}
+.panel-tab li a {
+  position: relative;
+  display: block;
+  padding: 10px 20px 5px;
+  background: #F6F6F6;
+  color: #B4B4B4;
+  border-width: 1px 1px 0;
+  border-style: solid;
+  border-color: #e0e6ed;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  -webkit-transform: translateY(5px);
+      -ms-transform: translateY(5px);
+          transform: translateY(5px);
+  -webkit-transition: all .2s ease-out;
+          transition: all .2s ease-out;
+}
+.panel-tab li a:not(.active):hover {
+  padding-bottom: 10px;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+.panel-tab li.active a {
+  background: #fff;
+  color: #0770CD;
+  padding-bottom: 10px;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+.panel-tab li.active a:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+}

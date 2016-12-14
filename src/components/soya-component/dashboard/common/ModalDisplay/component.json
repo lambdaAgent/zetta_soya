@@ -1,0 +1,12 @@
+{
+  "vendor": "Dashboard",
+  "name": "ModalDisplay",
+  "label": "Modal Display",
+  "category": "Dialog",
+  "author": {
+    "name": "Ricky Christie",
+    "email": "ricky@traveloka.com"
+  },
+  "thumbnail": "./ModalDisplayThumbnail.js",
+  "doc": "./ModalDisplayDoc.js"
+}

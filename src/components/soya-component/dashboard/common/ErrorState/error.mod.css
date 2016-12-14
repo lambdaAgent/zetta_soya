@@ -1,0 +1,18 @@
+.container {
+  overflow: auto;
+  padding: 20px;
+  margin: 0 auto 0 auto;
+  width: 140px;
+  text-align: center;
+}
+
+.icon {
+  display: block;
+  width: 30px;
+  margin: 0 auto 0 auto;
+}
+
+.text {
+  font-size: 13px;
+  font-weight: bold;
+}

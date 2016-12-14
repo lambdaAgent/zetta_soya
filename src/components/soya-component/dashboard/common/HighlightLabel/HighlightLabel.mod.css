@@ -1,0 +1,29 @@
+.label {
+  display: inline-block;
+  font-weight: bold;
+  background: #eee;
+  color: #434343;
+  font-size: 13px;
+  padding: 4px 16px;
+  border-radius: 16px;
+}
+
+.labelBlue {
+  color: #fff;
+  background: #1BA0E2;
+}
+
+.labelYellow {
+  color: #fff;
+  background: #FF9F04;
+}
+
+.labelGreen {
+  color: #fff;
+  background: #00A651;
+}
+
+.labelRed {
+  color: #fff;
+  background: #F34646;
+}

@@ -1,0 +1,12 @@
+{
+  "vendor": "Dashboard",
+  "name": "Tooltip",
+  "label": "Tooltip",
+  "category": "Control",
+  "author": {
+    "name": "Sem Matabei",
+    "email": "satryo@traveloka.com"
+  },
+  "thumbnail": "./ComponentThumbnail.js",
+  "doc": "./ComponentDoc.js"
+}

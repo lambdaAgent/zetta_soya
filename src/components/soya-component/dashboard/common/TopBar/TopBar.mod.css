@@ -1,0 +1,90 @@
+/* TopBar.css */
+.navBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  height: 50px;
+  background: #fff;
+  border-bottom: 1px solid #e0e6ed;
+  line-height: 20px;
+  padding: 13px 49px;
+  z-index: 1000;
+  transition: all .2s ease-out  ;
+}
+
+.navBarFull {
+  left: 0;
+  top: 0;
+  padding: 13px 25px;
+}
+
+.navBarLeft {
+  float: left;
+  width: 80%;
+}
+
+.navBarRight {
+  position: absolute;
+  right: 8px;
+  top:0;
+}
+
+.navBarButtons {
+  margin-top: -8px;
+}
+.navBarPageTitle,
+.navBarPageTitleBlock{
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 20px;
+}
+.navBarPageTitle.twoLayer {
+  position: relative;
+  display: block;
+  font-weight: bold;
+  top: 6px;
+}
+.navBarPageTitle.twoLayer b {
+  position: absolute;
+  font-size: 12px;
+  top: -15px;
+  color: #adadad;
+  font-weight: normal;
+}
+
+.navBarPageTitleBlock {
+  display: block;
+}
+.navBarPageTitleBlock:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.navBarPageUrl {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  color: #8f8f8f;
+  text-decoration: none;
+  padding: 4px 10px;
+  margin-top: -2px;
+  border-radius: 3px;
+}
+.navBarPageUrl input:focus {
+  outline: 0;
+}
+.navBarPageUrl:hover {
+  cursor: pointer;
+  background: #f8f8f8;
+}
+.navBarPageUrl:hover:after {
+  content: "Edit";
+  color: #1ba0e2;
+  margin-left: 10px;
+}
+.menuOpen {
+  margin-left: 200px;
+}
+
+

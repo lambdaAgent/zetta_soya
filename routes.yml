@@ -1,0 +1,80 @@
+#INDEX:
+#  page: src/pages/Index/Index.js
+#  nodes:
+#    - [method, GET]
+#    - [path, /]
+
+LOGIN:
+  page: src/pages/Login/LoginPage.js
+  nodes:
+    - [method, GET]
+    - [path, /login]
+
+# --------------------------------- dashboard ----------------------------------
+DASHBOARD:
+  page: src/pages/Dashboard/DashboardPage.js
+  nodes:
+    - [method, GET]
+    - [path, /dashboard]
+
+# ---------------------------------- products ----------------------------------
+PRODUCT:
+  page: src/pages/Suppliers/ProductDetail/ProductDetailPage.js
+  nodes:
+    - [method, GET]
+    - [path, /products]
+
+PRODUCT_ADD:
+  page: src/pages/Suppliers/ProductPage/ProductAddPage.js
+  nodes:
+    - [method, GET]
+    - [path, /products/add]
+
+# ---------------------------------- suppliers ----------------------------------
+SUPPLIER:
+  page: src/pages/Suppliers/SupplierPage/SupplierPage.js
+  nodes:
+    - [method, GET]
+    - [path, /suppliers]
+
+SUPPLIER_ADD:
+  page: src/pages/Suppliers/SupplierPage/SupplierAddPage.js
+  nodes:
+    - [method, GET]
+    - [path, /suppliers/add]
+
+SUPPLIER_DETAIL:
+  page: src/pages/Suppliers/SupplierDetail/SupplierDetailPage.js
+  nodes:
+    - [method, GET]
+    - [path, /supplier/:supplierName]
+
+# ---------------------------------- allotment ----------------------------------
+ALLOTMENT:
+  page: src/pages/Allotment/AllotmentPage.js
+  nodes:
+    - [method, GET]
+    - [path, /allotment]
+
+# --------------------------------- account management ----------------------------
+ACCOUNT_MANAGEMENT:
+  page: src/pages/AccountManagement/AccountManagementPage.js
+  nodes:
+    - [method, GET]
+    - [path, /accountManagement]
+
+ACCOUNT_ADD:
+  page: src/pages/AccountManagement/AccountManagementPages/AccountAdd.js
+  nodes:
+    - [method, GET]
+    - [path, /accountManagement/add]
+
+
+TRANSACTION:
+  page: src/pages/Transaction/Transaction.js
+  nodes:
+    - [method, GET]
+    - [path, /transaction]
+
+NOT_FOUND:
+  page: src/pages/system/NotFound/NotFound.js

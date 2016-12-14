@@ -1,0 +1,244 @@
+.expand-table {
+  margin-right: 20px;
+}
+
+.expand-table-bind {
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.table:last-child {
+  margin-bottom: 0;
+}
+.table > thead > tr > th {
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #dfe2e6;
+  background: #F6F6F6;
+  vertical-align: top;
+}
+.table > thead > tr > th {
+  background: #fff;
+  vertical-align: bottom;
+}
+.table > thead.filter > tr > th input[type="text"],
+.table > thead.filter > tr > th input[type="date"],
+.table > thead.filter > tr > th input[type="number"],
+.table > thead.filter > tr > th select {
+  min-width: 100px;
+}
+.table > tbody tr td {
+  box-sizing: border-box;
+  padding: 20px 10px;
+  text-align: left;
+  font-weight: 300;
+  border-bottom: 1px solid #e0e6ed;
+  vertical-align: top;
+}
+.table > tbody tr td .notes {
+  padding: 5px;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+  border-radius: 3px;
+}
+.table > tbody tr td .notes + * {
+  margin-top: 10px;
+}
+.table > tbody tr td .checkbox {
+  margin: 0;
+  width: 24px;
+  display: inline-block;
+}
+.table > tbody tr td .checkbox input {
+  width: 24px;
+}
+.table > tbody tr td .checkbox label {
+  vertical-align: top;
+}
+.table > tbody tr.red td .checkbox label:before, .table > tbody tr.red:hover td .checkbox label:before {
+  border-color: #F89090;
+}
+.table > tbody tr.red-dark td .notes, .table > tbody tr.red-dark:hover td .notes {
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+.table > tbody tr.red-dark td .checkbox label:before, .table > tbody tr.red-dark:hover td .checkbox label:before {
+  border-color: #F34646;
+}
+.table > tbody tr.red-darker td .notes, .table > tbody tr.red-darker:hover td .notes {
+  background: rgba(0, 0, 0, 0.3);
+}
+.table > tbody tr.red-darker td .checkbox label:before, .table > tbody tr.red-darker:hover td .checkbox label:before {
+  border-color: #952e2e;
+}
+.table > tbody tr.orange td .checkbox label:before, .table > tbody tr.orange:hover td .checkbox label:before {
+  border-color: #FCA867;
+}
+.table > tbody tr.yellow td .checkbox label:before, .table > tbody tr.yellow:hover td .checkbox label:before {
+  border-color: #FFD042;
+}
+.table > tbody tr.green td .checkbox label:before, .table > tbody tr.green:hover td .checkbox label:before {
+  border-color: #66CA97;
+}
+.table > tbody tr.grey td .checkbox label:before, .table > tbody tr.grey:hover td .checkbox label:before {
+  border-color: #B4B4B4;
+}
+.table > tbody tr.blue td .checkbox label:before, .table > tbody tr.blue:hover td .checkbox label:before {
+  border-color: #77C6EE;
+}
+.table.table-hover > thead > tr:hover > td,
+.table.table-hover > tbody > tr:hover > td {
+  background: rgba(133, 170, 188, 0.05);
+}
+.table.table-actionable > thead > tr > th:last-child,
+.table.table-actionable > tbody > tr > th:last-child,
+.table.table-actionable > thead > tr > td:last-child,
+.table.table-actionable > tbody > tr > td:last-child {
+  width: 1%;
+  white-space: nowrap;
+}
+.table.table-sortable > thead:not(.filter) > tr > th {
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.table.table-sortable > thead:not(.filter) > tr > th:not(.no-sort):hover {
+  background: #f1f1f1;
+}
+.table.table-sortable > thead:not(.filter) > tr > th:after {
+  content: "";
+  display: inline-block;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+.table.table-sortable > thead:not(.filter) > tr > th.ascending:after {
+  border-bottom: 5px solid #434343;
+  border-top-width: 0;
+}
+.table.table-sortable > thead:not(.filter) > tr > th.descending:after {
+  border-top: 5px solid #434343;
+  border-bottom-width: 0;
+}
+.table.table-sortable > thead:not(.filter) > tr > th.no-sort:after {
+  border-width: 0;
+}
+.table:not(:first-child) > thead > tr > th {
+  border-top: 1px solid #dfe2e6;
+}
+
+.table > tbody > tr {
+  cursor: pointer;
+}
+
+.table.mini > tbody > tr {
+  cursor: pointer;
+}
+
+.table.mini > thead > tr > th {
+  background: #fff;
+  color: #8F8F8F;
+  border-top: 1px solid #DADADA;
+}
+.table.mini > thead > tr > th:first-child {
+  border-left: 1px solid #DADADA;
+}
+.table.mini > thead > tr > th:last-child {
+  border-right: 1px solid #DADADA;
+}
+.table.mini.table-sortable > thead:not(.filter) > tr > th:after {
+  border-top-color: #8F8F8F;
+}
+.table.mini.table-sortable > thead:not(.filter) > tr > th.ascending:after {
+  border-bottom-color: #8F8F8F;
+}
+.table.mini.table-sortable > thead:not(.filter) > tr > th.descending:after {
+  border-top-color: #8F8F8F;
+}
+.table.mini > tbody tr td {
+  padding: 5px 10px;
+  font-size: 14px;
+  vertical-align: top;
+}
+.table.mini > tbody tr td:first-child {
+  border-left: 1px solid #DADADA;
+}
+.table.mini > tbody tr td:last-child {
+  border-right: 1px solid #DADADA;
+}
+.table.mini > thead.filter > tr > th {
+  background: #fff;
+  vertical-align: bottom;
+  color: #434343;
+}
+.table.mini > thead.filter > tr > th input[type="text"],
+.table.mini > thead.filter > tr > th input[type="date"],
+.table.mini > thead.filter > tr > th input[type="number"],
+.table.mini > thead.filter > tr > th select {
+  font-size: 14px;
+  padding: 2px 8px;
+  height: 30px;
+  min-height: 25px;
+}
+
+.red, .table tr.red td, .table tr.red:hover td {
+  background: #FBB5B5;
+  border-color: #F89090;
+  border-bottom-color: #F89090;
+}
+
+.red-dark, .table tr.red-dark td, .table tr.red-dark:hover td {
+  background: #F66B6B;
+  border-color: #F34646;
+  border-bottom-color: #F34646;
+}
+
+.red-darker, .table tr.red-darker td, .table tr.red-darker:hover td {
+  background: #ad3939;
+  border-color: #952e2e;
+  border-bottom-color: #952e2e;
+  color: #fff;
+}
+
+.orange, .table tr.orange td, .table tr.orange:hover td {
+  background: #FDC59A;
+  border-color: #FCA867;
+  border-bottom-color: #FCA867;
+}
+
+.yellow, .table tr.yellow td, .table tr.yellow:hover td {
+  background: #FFE8A1;
+  border-color: #FFD042;
+  border-bottom-color: #FFD042;
+}
+
+.green, .table tr.green td, .table tr.green:hover td {
+  background: #99DCBA;
+  border-color: #66CA97;
+  border-bottom-color: #66CA97;
+}
+
+.grey, .table tr.grey td, .table tr.grey:hover td {
+  background: #DADADA;
+  border-color: #B4B4B4;
+  border-bottom-color: #B4B4B4;
+}
+
+.blue, .table tr.blue td, .table tr.blue:hover td {
+  background: #A4D9F4;
+  border-color: #77C6EE;
+  border-bottom-color: #77C6EE;
+}
+
+.filter {
+  background: #fff;
+}

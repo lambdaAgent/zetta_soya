@@ -1,0 +1,36 @@
+.card {
+  position: relative;
+  display: block;
+  margin-bottom: 0.75rem;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.cardTitle {
+  margin: 0.75rem;
+  margin-bottom: 0;
+}
+.cardSubtitle {
+  margin: 0 0.75rem;
+  color: #8c8c8c;
+}
+.cardBody {
+  padding: 1.25rem;
+}
+
+.cardBody:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.0;
+    top: 100px;
+  }
+  to {
+    opacity: 1.0;
+    top: 0px;
+  }
+}

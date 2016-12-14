@@ -1,0 +1,12 @@
+{
+  "vendor": "Dashboard",
+  "name": "TextBox",
+  "label": "TextBox",
+  "category": "Form Control",
+  "author": {
+    "name": "Sem Matabei",
+      "email": "satryo@traveloka.com"
+  },
+  "thumbnail": "./ComponentThumbnail.js",
+  "doc": "./ComponentDoc.js"
+}

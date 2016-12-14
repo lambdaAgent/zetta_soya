@@ -1,0 +1,94 @@
+.modal {
+  max-width: 1000px;
+  min-width: 400px;
+  min-height: 200px;
+  max-height: 700px;
+  z-index: 9;
+  background-color: white;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.absoluteCenter {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.modalLayer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.modalOverlayBlack {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 100px;
+  animation-name: fadeIn;
+  animation-duration: 200ms;
+}
+.modalContainer {
+  display: inline-block;
+  min-width: 200px;
+  background-color: #f0ad4e;
+}
+
+.modalHeader {
+  padding: 1rem;
+  padding-bottom: 0rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.modalBody {
+  padding: 1rem;
+  max-height: 600px;
+  overflow-y: scroll;
+}
+.modalFooter {
+  position: absolute;
+  bottom: 0px;
+  padding: 1rem;
+}
+.btnClose {
+  float: right;
+  color: #c0c0c0;
+  cursor: pointer;
+}
+.btnClose:hover {
+  color: #999999;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.0;
+  }
+  to {
+    opacity: 1.0;
+  }
+}
+
+.modalConfirm {
+  min-width: 400px;
+  max-width: 400px;
+  width: 400px;
+  min-height: 200px;
+}
+
+.modalSize1 {
+  width: 400px;
+}
+.modalSize2 {
+  width: 600px;
+}
+.modalSize3 {
+  width: 800px;
+}
+.modalSize4 {
+  width: 1000px;
+}

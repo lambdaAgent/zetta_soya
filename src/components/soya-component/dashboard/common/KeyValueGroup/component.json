@@ -1,0 +1,12 @@
+{
+  "vendor": "Dashboard",
+  "name": "KeyValueGroup",
+  "label": "Key Value Groups",
+  "category": "Control",
+  "author": {
+    "name": "M. Fahry",
+    "email": "m.fahry@traveloka.com"
+  },
+  "thumbnail": "./ComponentThumbnail.js",
+  "doc": "./ComponentDoc.js"
+}

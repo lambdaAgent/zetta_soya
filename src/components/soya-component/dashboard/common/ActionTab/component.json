@@ -1,0 +1,12 @@
+{
+  "vendor": "Dashboard",
+  "name": "ActionTab",
+  "label": "ActionTab",
+  "category": "Container",
+  "author": {
+    "name": "M. Fahry",
+    "email": "m.fahry@traveloka.com"
+  },
+  "thumbnail": "./ComponentThumbnail.js",
+  "doc": "./ComponentDoc.js"
+}

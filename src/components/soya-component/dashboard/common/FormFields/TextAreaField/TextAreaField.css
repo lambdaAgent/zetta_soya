@@ -1,0 +1,46 @@
+.textAreaInput {
+  margin: 5px 0;
+}
+
+.textAreaInput > textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #55595c;
+  background-color: #fff;
+  background-image: none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  transition: all 200ms ease;
+}
+
+.textAreaInput > textarea:focus {
+  color: #55595c;
+  background-color: #f4f4f4;
+  border-color: #aaaaaa;
+  outline: none;
+}
+
+.textAreaInput > textarea:hover {
+  border-color: #aaaaaa;
+}
+
+.textAreaInput > textarea::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+.textAreaInput > textarea:disabled, .textAreaInput > textarea[readonly] {
+  background-color: #eceeef;
+  opacity: 1;
+}
+
+.textAreaInput > textarea:disabled {
+  cursor: not-allowed;
+}
+
+

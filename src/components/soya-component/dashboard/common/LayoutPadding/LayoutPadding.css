@@ -1,0 +1,22 @@
+.padding {
+  position: relative;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+.left {
+  padding-left: 1.25rem;
+}
+.right {
+  padding-right: 1.25rem;
+}
+.top {
+  padding-top: 1.25rem;
+}
+.bottom {
+  padding-bottom: 1.25rem;
+}
+.padding:after {
+  content: "";
+  display: table;
+  clear: both;
+}

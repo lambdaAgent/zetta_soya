@@ -1,0 +1,12 @@
+{
+  "vendor": "Dashboard",
+  "name": "LoadedContent",
+  "label": "Loaded Content Wrapper",
+  "category": "Modal",
+  "author": {
+    "name": "Ricky Christie",
+    "email": "ricky@traveloka.com"
+  },
+  "thumbnail": "./LoadedContentThumbnail.js",
+  "doc": "./LoadedContentDoc.js"
+}

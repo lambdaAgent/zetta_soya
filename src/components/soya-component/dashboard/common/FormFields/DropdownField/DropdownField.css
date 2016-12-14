@@ -1,0 +1,46 @@
+.selectBox {
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+.selectBox span {
+  color: red;
+  display: block;
+}
+.selectBox select {
+  margin-bottom: 1.2rem;
+}
+.selectBox.selectBoxInline select {
+  margin-bottom: 0rem;
+}
+.selectBox select {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #55595c;
+  background-color: #fff;
+  background-image: none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  transition: all 200ms ease;
+}
+.selectBox select:focus {
+  color: #55595c;
+  background-color: #f9f9f9;
+  border-color: #999999;
+  outline: none;
+}
+.selectBox select:hover{
+  background-color: #fcfcfc;
+}
+.formControlInline {
+  width: 100%;
+}
+.inlineWrapper {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

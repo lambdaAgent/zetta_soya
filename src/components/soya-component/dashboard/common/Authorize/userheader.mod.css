@@ -1,0 +1,19 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 10px 10px 13px 70px;
+  font-size: 14px;
+  border-bottom: 1px solid #e0e6ed;
+  z-index: 50;
+}
+
+.container strong {
+  font-weight: bold;
+}
+
+.buttonContainer {
+  float: right;
+}

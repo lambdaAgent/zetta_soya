@@ -1,0 +1,12 @@
+{
+  "vendor": "Dashboard",
+  "name": "Authorize",
+  "label": "Authorize Container",
+  "category": "Container",
+  "author": {
+    "name": "Ricky Christie",
+    "email": "ricky@traveloka.com"
+  },
+  "thumbnail": "./AuthorizeThumbnail.js",
+  "doc": "./AuthorizeDoc.js"
+}

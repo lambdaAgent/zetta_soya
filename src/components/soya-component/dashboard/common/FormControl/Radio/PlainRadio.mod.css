@@ -1,0 +1,70 @@
+/* Radio.css */
+.radio {
+  display: block;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.radio input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 24px;
+  z-index: 10;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.radio input + label {
+  position: relative;
+  line-height: 24px;
+  padding: 0 0 0 32px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.radio input + label:before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  display: inline-block;
+  background: #F6F6F6;
+  border: 1px solid #DADADA;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.radio input + label:after {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  display: inline-block;
+  background: #F6F6F6;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.radio input:checked + label:before {
+  background: #fff;
+  border-color: #0770CD;
+}
+.radio input:checked + label:after {
+  background: #0770CD;
+  transform: scale(0.6);
+}

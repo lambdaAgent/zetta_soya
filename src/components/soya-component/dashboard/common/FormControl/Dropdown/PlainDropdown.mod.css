@@ -1,0 +1,26 @@
+/* Dropdown.css */
+.dropDownWrapper {
+  position: relative;
+}
+.dropDownWrapper:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 14px;
+  right: 16px;
+  width: 5px;
+  height: 5px;
+  border-left: 2px solid #0770CD;
+  border-bottom: 2px solid #0770CD;
+  -webkit-transform: rotate(-45Deg);
+  -ms-transform: rotate(-45Deg);
+  transform: rotate(-45Deg);
+}
+
+.dropDownWrapper select {
+  height: 36px;
+  padding-right: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}

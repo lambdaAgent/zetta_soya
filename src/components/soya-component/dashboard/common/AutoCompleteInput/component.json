@@ -1,0 +1,12 @@
+{
+  "vendor": "Dashboard",
+  "name": "AutoCompleteInput",
+  "label": "Auto Complete Input",
+  "category": "FormControl",
+  "author": {
+    "name": "M Fahry",
+    "email": "m.fahry@traveloka.com"
+  },
+  "thumbnail": "./ComponentThumbnail.js",
+  "doc": "./ComponentDoc.js"
+}

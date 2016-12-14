@@ -1,0 +1,12 @@
+{
+  "vendor": "Dashboard",
+  "name": "Simple Table",
+  "label": "Simple Table",
+  "category": "Container",
+  "author": {
+    "name": "Sem Matabei",
+    "email": "satryo@traveloka.com"
+  },
+  "thumbnail": "./ComponentThumbnail.js",
+  "doc": "./ComponentDoc.js"
+}

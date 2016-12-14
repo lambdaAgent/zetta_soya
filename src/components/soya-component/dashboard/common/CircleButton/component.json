@@ -1,0 +1,12 @@
+{
+  "vendor": "Dashboard",
+  "name": "CircleButton",
+  "label": "CircleButton",
+  "category": "FormControl",
+  "author": {
+    "name": "M.Fahry",
+    "email": "m.fahry@traveloka.com"
+  },
+  "thumbnail": "./ComponentThumbnail.js",
+  "doc": "./ComponentDoc.js"
+}
