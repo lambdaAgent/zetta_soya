@@ -65,7 +65,7 @@ class Component extends React.Component {
     return <div>
       <Navbar context={this.props.context} active={'SUPPLIERS'} />
       <PageNotificationThumbnail context={this.props.context}/>
-      <Breadcrumb array={breadcrumbPath} context={this.props.context} />
+      <Breadcrumb path={window.location.href} domain={'http://localhost:4000'} context={this.props.context} />
       <h1>Create New Supplier</h1>
       <label>Company Name</label>
       <TextBox form={this._form} context={this.props.context}

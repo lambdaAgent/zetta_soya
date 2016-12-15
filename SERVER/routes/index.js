@@ -28,6 +28,21 @@ router.get("/supplierList", (req, res, next) => {
  })
 });
 
+router.get("/supplierListWithManager", (req, res) => {
+	fs.readFile(baseDir+"/../database/Suppliers.json", 'utf8', (err, data) => {
+	 		const suppliers = JSON.parse(data);
+	 		const supplierListWithManager = suppliers.map(s => {
+	 			return {
+	 				supplierName:s.supplier_name,
+	 				marketManager: s.marketManager.first_name + ' ' + s.marketManager.last_name,
+	 				_id: s.id
+	 			};
+	 		})
+	 		
+	 		res.json(supplierListWithManager);
+ })
+});
+
 router.get("/supplier/:supplierName", (req, res) => {
 	 const supplierName = req.params.supplierName;
 	 fs.readFile(baseDir+"/../database/Suppliers.json", 'utf8', (err, data) => {

@@ -6,6 +6,7 @@ fs.readFile("./sales_list1.json", 'utf8', (err, sales_json1) => {
 fs.readFile("./sales_list2.json", 'utf8', (err, sales_json2) => {
 fs.readFile("./sales_list3.json", 'utf8', (err, sales_json3) => {
 
+	fs.readFile('./marketManager.json', 'utf8', (err, marketManager_json) => {
 	fs.readFile('./products.json', 'utf8', (err, products_json) => {
 		fs.readFile('./supplier.json', 'utf8', (err, supplier_json) => {
 
@@ -14,7 +15,7 @@ fs.readFile("./sales_list3.json", 'utf8', (err, sales_json3) => {
 			let sales2 = JSON.parse(sales_json2);
 			let sales3 = JSON.parse(sales_json3);
 			const suppliers = JSON.parse(supplier_json);
-
+			const marketManagers = JSON.parse(marketManager_json);
 
 
 			let newProduct = [];
@@ -37,12 +38,16 @@ fs.readFile("./sales_list3.json", 'utf8', (err, sales_json3) => {
 				newProduct.push(product);
 			});
 
+			//add status::boolean to each of newProduct
+			const bool = [true, false];
+			newProduct = newProduct.map(p => p.status = bool[Math.floor(Math.random())]);
+
 
 			//make new Products.json file?
 
 			suppliers.map(supplier => {
 				supplier.products = take5FromProduct(newProduct);
-				console.log(supplier.products[2].sales)
+				supplier.marketManager = marketManagers.splice( Math.floor(Math.random() * marketManagers.length-1), 1)[0];
 			});
 
 			fs.writeFile('Suppliers.json', JSON.stringify(suppliers), (err) => {
@@ -51,6 +56,7 @@ fs.readFile("./sales_list3.json", 'utf8', (err, sales_json3) => {
 
 	  })//readFile(supplier)
   });//readFile(product)
+  });
 });
 });
 });

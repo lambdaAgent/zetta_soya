@@ -4,7 +4,7 @@ import QueryResult from 'soya/lib/data/redux/QueryResult';
 import update from 'react-addons-update';
 import DashboardService from './DashboardService.js';
 
-const ID = 'userProfile';
+const ID = 'dashboardPage';
 const SET_ACTION_TYPE = `${ID}.set`;
 const FETCH_SUPPLIER_NAMES = `${ID}.fetchSupplierNames`;
 const FETCH_SUPPLIER = `${ID}.fetchSupplier`;
@@ -21,7 +21,6 @@ const actionCreator = {
     let load = new Load(ID);
     load.func = (dispatch, queryFunc, services) => {
       let userService = services[DashboardService.id()];
-      console.log('userService', services);
       return new Promise((resolve, reject) => {
         // Use the service to fetch data.
         userService.fetchUserProfile(userId).then((data) => {
@@ -109,6 +108,8 @@ export default class DashboardSegment extends Segment {
 
   static queryState(query, queryId, segmentState) {
     if (segmentState != null && segmentState.hasOwnProperty(query)) {
+      console.log(query);
+      debugger;
       return QueryResult.loaded(segmentState[query]);
     }
     return QueryResult.notLoaded();

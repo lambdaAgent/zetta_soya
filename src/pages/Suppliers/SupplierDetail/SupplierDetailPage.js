@@ -10,6 +10,9 @@ import Navbar from '../../../components/zetta/Navbar/Navbar.js';
 import SupplierProduct from './componentInTabsView/SupplierProductComponent.js';
 import SupplierDetail from './componentInTabsView/SupplierDetailComponent.js';
 import ActionTab from '../../../components/soya-component/dashboard/common/ActionTab/ActionTab.js';
+import Breadcrumb from '../../../components/zetta/Breadcrumb/Breadcrumb.js';
+
+
 
 const sampleSuppliers = [
   {
@@ -41,7 +44,7 @@ const required = function required(value) {
 class Component extends React.Component {
   constructor(props){
     super(props);
-    this.state = {showTabbed: LIST_MENU[0].id};
+    this.state = {showTabbed: LIST_MENU[0].id, url:''};
     this.tabView = {
       [ LIST_MENU[0].id ]: <SupplierProduct message={'hello'} context={this.props.context}/>,
       [ LIST_MENU[1].id ]: <SupplierDetail />
@@ -50,6 +53,9 @@ class Component extends React.Component {
   }
   componentWillMount(){
     // this._form = new Form(this.props.context.store, FORM_ID);
+  }
+  componentDidMount(){
+    this.setState({url: window.location.href});
   }
 
   handleTabClick(id){
@@ -61,6 +67,7 @@ class Component extends React.Component {
     let showedComponent;
     return <div>
       <Navbar context={this.props.context} active={'SUPPLIERS'} />
+      <Breadcrumb path={this.state.url} />
       <ActionTab tabList={LIST_MENU}
                  defaultTabId={DEFAULT_TAB}
                  handleTabClick={this.handleTabClick.bind(this)}

@@ -47,7 +47,7 @@ SUPPLIER_DETAIL:
   page: src/pages/Suppliers/SupplierDetail/SupplierDetailPage.js
   nodes:
     - [method, GET]
-    - [path, /supplier/:supplierName]
+    - [path, /suppliers/:supplierName]
 
 # ---------------------------------- allotment ----------------------------------
 ALLOTMENT:

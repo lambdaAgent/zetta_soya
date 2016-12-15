@@ -27,6 +27,7 @@
     "react-autosuggest": "^6.0.4",
     "react-bootstrap-datetimepicker": "0.0.22",
     "react-codemirror": "^0.2.6",
+    "react-d3-library": "^1.1.7",
     "react-dom": "^0.14.6",
     "react-google-maps": "^4.11.0",
     "react-textarea-autosize": "^4.0.5",

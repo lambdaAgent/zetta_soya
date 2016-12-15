@@ -1,27 +1,48 @@
 import React from 'react';
 
-const Breadcrumb = props => {
-  const array = props.items || [
-      { title: 'Supplier Data', routerName: 'SUPPLIER'},
-      { title: 'SUPPLIER ABC', routerName: 'SUPPLIER'},
 
-  ];
+// const Breadcrumb = props => {
+//   const path = props.path;
+//   const workingUrl = path.split(this.props.domain+'/')[1];
+//   const decodePath = decodeURI(workingUrl).replace(' ', '');
+//   const pathAsArray = decodePath.split('/');
+//
+//   return(
+//     <div>
+//       {
+//         pathAsArray.map()
+//       }
+//     </div>
+//   );
+// };
+
+const Breadcrumb = props => {
+  const path = props.path;
+  const defaultDomain = 'http://localhost:4000';
+  const workingUrl = props.domain ? path.split(props.domain+'/')[1] : path.split(defaultDomain+'/')[1];
+  const decodePath = decodeURI(workingUrl).replace(' ', '');
+  const pathAsArray = decodePath.split('/');
+
+  function createPath(pathAsArray, index){
+    var path = defaultDomain;
+    for (var i=0; i<index+1; i++){
+      path = path + '/' + pathAsArray[i];
+    }
+    return path;
+  }
+
   return(
     <div>
       {
-        props.array.map((a, index) => {
-          if(a.routerName){
-            return <Link key={a+index} title={(index === props.array.length-1 ) ? a.title : a.title + ' > '}
-                         onClick={(e) => {
-                           console.log(e);
-                           window.location = props.context.router.reverseRoute(a.routerName)
-                         }}
-                   />
-          } else {
-            return <Link key={a+index} title={(index === props.array.length-1 ) ? a.title : a.title + ' > '}
-                         onClick={(e) => { window.location.href = a.path}}
-                   />
+        pathAsArray.map((a, index) => {
+          if(index === pathAsArray.length-1){
+            return <Link key={a+index} title={ a }
+            />
           }
+          return <Link key={a+index} title={ a + ' > '}
+                       onClick={(e) => { window.location.href = createPath(pathAsArray, index) }}
+                 />
+
         })
       }
     </div>
@@ -29,14 +50,7 @@ const Breadcrumb = props => {
 };
 
 Breadcrumb.propTypes = {
-  array: React.PropTypes.arrayOf(
-    React.PropTypes.objectOf({
-      title: React.PropTypes.string,
-      routerName: React.PropTypes.string,
-      path: React.PropTypes.string
-    })
-  ).isRequired,
-  context: React.PropTypes.any.isRequired
+
 };
 
 const Link = props => {

@@ -19,7 +19,6 @@ import Dropdown from '../../components/soya-component/dashboard/common/FormContr
 
 const FORM_ID = 'dashboard';
 
-const options = [{label:'Diva Karaoke', value:'Diva'}, {label:'Dimas Karaoke', value: 'Diva'}, {label:'Tv Karaoke', value: 'Tv'}];
 
 class Dashboard extends React.Component {
   constructor(props){
@@ -73,6 +72,8 @@ class Dashboard extends React.Component {
   }
 
   render(){
+    console.log(this.props);
+    debugger;
     const supplierNames = this.props.result.supplierNames || [];
     const supplierSelected = this.props.result.supplier;
     const supplierProducts = !supplierSelected ? [] : supplierSelected.products.map(p => {
