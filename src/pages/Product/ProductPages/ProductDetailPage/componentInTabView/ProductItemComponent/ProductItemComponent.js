@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../../../../components/soya-component/dashboard/common/Button/Button.js'
-import SimpleTable from '../../../../components/soya-component/dashboard/common/Table/SimpleTable/SimpleTable.js';
+import Button from '../../../../../../components/soya-component/dashboard/common/Button/Button.js'
+import SimpleTable from '../../../../../../components/soya-component/dashboard/common/Table/SimpleTable/SimpleTable.js';
 
 const itemList = [
   { _id: 'itemTicket',

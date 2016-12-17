@@ -3,19 +3,19 @@ import ReactRenderer from 'soya/lib/page/react/ReactRenderer';
 import register from 'soya/lib/client/Register';
 import RenderResult from 'soya/lib/page/RenderResult';
 import React from 'react';
-import { routeRequirement } from '../../../shared/routeRequirement.js';
+import { routeRequirement } from '../../../../shared/routeRequirement.js';
 import Form from 'soya/lib/data/redux/form/Form';
-import { PageNotificationAction } from '../../../components/soya-component/dashboard/common/PageNotification/PageNotification.js';
+import { PageNotificationAction } from '../../../../components/soya-component/dashboard/common/PageNotification/PageNotification.js';
 import createField from 'soya/lib/data/redux/form/createField';
 
 // components
-import Navbar from '../../../components/zetta/Navbar/Navbar.js';
-import TextBox from '../../../components/soya-component/dashboard/common/FormControl/TextBox/TextBox.js';
-import Button from '../../../components/soya-component/dashboard/common/Button/Button.js';
-import Dropdown from '../../../components/soya-component/dashboard/common/FormControl/Dropdown/Dropdown.js';
-import AutoCompleteInput from '../../../components/soya-component/dashboard/common/AutoCompleteInput/AutoCompleteInput.js';
-import Checkbox from '../../../components/soya-component/dashboard/common/FormControl/Checkbox/Checkbox.js';
-import CheckboxThumbnail from '../../../components/soya-component/dashboard/common/FormControl/Checkbox/ComponentThumbnail.js';
+import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
+import TextBox from '../../../../components/soya-component/dashboard/common/FormControl/TextBox/TextBox.js';
+import Button from '../../../../components/soya-component/dashboard/common/Button/Button.js';
+import Dropdown from '../../../../components/soya-component/dashboard/common/FormControl/Dropdown/Dropdown.js';
+import AutoCompleteInput from '../../../../components/soya-component/dashboard/common/AutoCompleteInput/AutoCompleteInput.js';
+import Checkbox from '../../../../components/soya-component/dashboard/common/FormControl/Checkbox/Checkbox.js';
+import CheckboxThumbnail from '../../../../components/soya-component/dashboard/common/FormControl/Checkbox/ComponentThumbnail.js';
 const FORM_ID = 'ACCOUNT_ADD';
 
 const suppliers = [

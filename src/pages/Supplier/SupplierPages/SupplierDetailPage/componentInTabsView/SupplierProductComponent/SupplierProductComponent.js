@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../../../../components/soya-component/dashboard/common/Button/Button.js';
-import SimpleTable from '../../../../components/soya-component/dashboard/common/Table/SimpleTable/SimpleTable.js';
-import {formatCurrency} from '../../../../shared/utilities.js';
+import Button from '../../../../../../components/soya-component/dashboard/common/Button/Button.js';
+import SimpleTable from '../../../../../../components/soya-component/dashboard/common/Table/SimpleTable/SimpleTable.js';
+import {formatCurrency} from '../../../../../../shared/utilities.js';
 
 
 export default class SupplierProductComponent extends React.Component {

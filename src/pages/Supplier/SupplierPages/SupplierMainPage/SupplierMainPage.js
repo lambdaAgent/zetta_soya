@@ -4,14 +4,14 @@ import ReactRenderer from 'soya/lib/page/react/ReactRenderer';
 import register from 'soya/lib/client/Register';
 import RenderResult from 'soya/lib/page/RenderResult';
 import connect from 'soya/lib/data/redux/connect';
-import {routeRequirement} from '../../../shared/routeRequirement.js';
+import {routeRequirement} from '../../../../shared/routeRequirement.js';
 
-import SupplierSegment from './SupplierSegment.js';
+import SupplierSegment from '../../SupplierSegment/SupplierSegment.js';
 
 // component
-import Navbar from '../../../components/zetta/Navbar/Navbar.js';
-import Button from '../../../components/soya-component/dashboard/common/Button/Button.js';
-import SimpleTable from '../../../components/soya-component/dashboard/common/Table/SimpleTable/SimpleTable.js';
+import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
+import Button from '../../../../components/soya-component/dashboard/common/Button/Button.js';
+import SimpleTable from '../../../../components/soya-component/dashboard/common/Table/SimpleTable/SimpleTable.js';
 const FORM_ID = 'supplier';
 
 // let sampleSuppliers = [
@@ -83,7 +83,7 @@ const SupplierConnect = connect(Component);
 
 class SuppliersPage extends ReduxPage {
   static get pageName(){
-    return 'Suppliers';
+    return 'Supplier';
   }
 
   static getRouteRequirements() {

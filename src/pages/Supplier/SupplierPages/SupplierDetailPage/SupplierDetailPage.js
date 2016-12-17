@@ -3,19 +3,19 @@ import ReactRenderer from 'soya/lib/page/react/ReactRenderer';
 import register from 'soya/lib/client/Register';
 import RenderResult from 'soya/lib/page/RenderResult';
 import React from 'react';
-import {routeRequirement} from '../../../shared/routeRequirement.js';
+import {routeRequirement} from '../../../../shared/routeRequirement.js';
 import connect from 'soya/lib/data/redux/connect';
 
 // component
-import Navbar from '../../../components/zetta/Navbar/Navbar.js';
-import SupplierProduct from './componentInTabsView/SupplierProductComponent.js';
-import SupplierDetail from './componentInTabsView/SupplierDetailComponent.js';
-import ActionTab from '../../../components/soya-component/dashboard/common/ActionTab/ActionTab.js';
-import Breadcrumb from '../../../components/zetta/Breadcrumb/Breadcrumb.js';
+import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
+import SupplierProduct from './componentInTabsView/SupplierProductComponent/SupplierProductComponent.js';
+import SupplierDetail from './componentInTabsView/SupplierDetailComponent/SupplierDetailComponent.js';
+import ActionTab from '../../../../components/soya-component/dashboard/common/ActionTab/ActionTab.js';
+import Breadcrumb from '../../../../components/zetta/Breadcrumb/Breadcrumb.js';
 
 //segment, use supplierPage Segment
-import SupplierSegment from '../SupplierPage/SupplierSegment.js';
-import ProductSegment from '../ProductPage/ProductSegment.js';
+import SupplierSegment from '../../SupplierSegment/SupplierSegment.js';
+import ProductSegment from '../../../Product/ProductSegment/ProductSegment.js';
 
 const LIST_MENU = [
   {

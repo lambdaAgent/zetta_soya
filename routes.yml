@@ -12,72 +12,72 @@ LOGIN:
 
 # --------------------------------- dashboard ----------------------------------
 DASHBOARD:
-  page: src/pages/Dashboard/DashboardPage.js
+  page: src/pages/Dashboard/DashboardPages/DashboardMainPage/DashboardMainPage.js
   nodes:
     - [method, GET]
     - [path, /dashboard]
 
 # ---------------------------------- products ----------------------------------
 PRODUCT:
-  page: src/pages/Suppliers/ProductDetail/ProductDetailPage.js
+  page: src/pages/Product/ProductPages/ProductDetailPage/ProductDetailPage.js
   nodes:
     - [method, GET]
     - [path, /suppliers/:supplierName/products/:productName]
 
 PRODUCT_DETAIL:
-  page: src/pages/Suppliers/ProductDetail/ProductDetailPage.js
+  page: src/pages/Product/ProductPages/ProductDetailPage/ProductDetailPage.js
   nodes:
     - [method, GET]
     - [path, /suppliers/:supplierName/products/:productName]
 
 PRODUCT_ADD:
-  page: src/pages/Suppliers/ProductPage/ProductAddPage.js
+  page: src/pages/Product/ProductPages/ProductAddPage/ProductAddPage.js
   nodes:
     - [method, GET]
     - [path, /suppliers/:supplierName/products/:productName/add]
 
 # ---------------------------------- suppliers ----------------------------------
 SUPPLIER:
-  page: src/pages/Suppliers/SupplierPage/SupplierPage.js
+  page: src/pages/Supplier/SupplierPages/SupplierMainPage/SupplierMainPage.js
   nodes:
     - [method, GET]
     - [path, /suppliers]
 
 SUPPLIER_ADD:
-  page: src/pages/Suppliers/SupplierPage/SupplierAddPage.js
+  page: src/pages/Supplier/SupplierPages/SupplierAddPage/SupplierAddPage.js
   nodes:
     - [method, GET]
     - [path, /suppliers/add]
 
 SUPPLIER_DETAIL:
-  page: src/pages/Suppliers/SupplierDetail/SupplierDetailPage.js
+  page: src/pages/Supplier/SupplierPages/SupplierDetailPage/SupplierDetailPage.js
   nodes:
     - [method, GET]
     - [path, /suppliers/:supplierName]
 
 # ---------------------------------- allotment ----------------------------------
 ALLOTMENT:
-  page: src/pages/Allotment/AllotmentPage.js
+  page: src/pages/Allotment/AllotmentPages/AllotmentMainPage/AllotmentMainPage.js
   nodes:
     - [method, GET]
     - [path, /allotment]
 
 # --------------------------------- account management ----------------------------
 ACCOUNT_MANAGEMENT:
-  page: src/pages/AccountManagement/AccountManagementPage.js
+  page: src/pages/AccountManagement/AccountManagementPages/AccountManagementMainPage/AccountManagementMainPage.js
   nodes:
     - [method, GET]
     - [path, /accountManagement]
 
 ACCOUNT_ADD:
-  page: src/pages/AccountManagement/AccountManagementPages/AccountAdd.js
+  page: src/pages/AccountManagement/AccountManagementPages/AccountManagementAddPage/AccountManagementAddPage.js
   nodes:
     - [method, GET]
     - [path, /accountManagement/add]
 
 
 TRANSACTION:
-  page: src/pages/Transaction/Transaction.js
+  page: src/pages/Transaction/TransactionPages/TransactionMainPage/TransactionMainPage.js
   nodes:
     - [method, GET]
     - [path, /transaction]

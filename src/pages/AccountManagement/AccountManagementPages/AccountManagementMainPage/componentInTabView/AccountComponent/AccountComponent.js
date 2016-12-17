@@ -1,8 +1,8 @@
 import React from 'react';
-import AutoCompleteInput from '../../../components/soya-component/dashboard/common/AutoCompleteInput/AutoCompleteInput.js'
-import AutoCompleteInputThumbnail from '../../../components/soya-component/dashboard/common/AutoCompleteInput/ComponentThumbnail.js'
+import AutoCompleteInput from '../../../../../../components/soya-component/dashboard/common/AutoCompleteInput/AutoCompleteInput.js'
+import AutoCompleteInputThumbnail from '../../../../../../components/soya-component/dashboard/common/AutoCompleteInput/ComponentThumbnail.js'
 import createField from 'soya/lib/data/redux/form/createField';
-import Button from '../../../components/soya-component/dashboard/common/Button/Button.js';
+import Button from '../../../../../../components/soya-component/dashboard/common/Button/Button.js';
 
 const options = [
   {value: 'INDONESIA', searchString: 'Indonesia Bhinneka Tunggal Ika'},

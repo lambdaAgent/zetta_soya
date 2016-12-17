@@ -4,9 +4,9 @@ import ReactRenderer from 'soya/lib/page/react/ReactRenderer';
 import register from 'soya/lib/client/Register';
 import RenderResult from 'soya/lib/page/RenderResult';
 import React from 'react';
-import {routeRequirement} from '../../shared/routeRequirement.js';
+import {routeRequirement} from '../../../../shared/routeRequirement.js';
 
-import Navbar from '../../components/zetta/Navbar/Navbar.js';
+import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
 
 const FORM_ID = '';
 const required = function required(value) {

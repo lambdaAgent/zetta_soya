@@ -4,18 +4,18 @@ import ReactRenderer from 'soya/lib/page/react/ReactRenderer';
 import register from 'soya/lib/client/Register';
 import RenderResult from 'soya/lib/page/RenderResult';
 import connect from 'soya/lib/data/redux/connect';
-import {routeRequirement} from '../../shared/routeRequirement.js';
+import {routeRequirement} from '../../../../shared/routeRequirement.js';
 import Form from 'soya/lib/data/redux/form/Form';
 
-import DashboardSegment from './DashboardSegment.js';
+import DashboardSegment from '../../DashboardSegment/DashboardSegment.js';
 import rd3 from 'react-d3-library';
 const RD3Component = rd3.Component;
 
 
 // component
-import Navbar from '../../components/zetta/Navbar/Navbar.js';
-import DateTimePicker from '../../components/soya-component/dashboard/external/DateTimePicker/DateTimePicker.js';
-import Dropdown from '../../components/soya-component/dashboard/common/FormControl/Dropdown/Dropdown.js';
+import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
+import DateTimePicker from '../../../../components/soya-component/dashboard/external/DateTimePicker/DateTimePicker.js';
+import Dropdown from '../../../../components/soya-component/dashboard/common/FormControl/Dropdown/Dropdown.js';
 
 const FORM_ID = 'dashboard';
 

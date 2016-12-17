@@ -4,13 +4,13 @@ import ReactRenderer from 'soya/lib/page/react/ReactRenderer';
 import register from 'soya/lib/client/Register';
 import RenderResult from 'soya/lib/page/RenderResult';
 import React from 'react';
-import {routeRequirement} from '../../shared/routeRequirement.js';
+import {routeRequirement} from '../../../../shared/routeRequirement.js';
 
 // component
-import Navbar from '../../components/zetta/Navbar/Navbar.js';
-import Account from './componentInTabView/AccountComponent.js';
-import Role from './componentInTabView/RoleComponent.js';
-import ActionTab from '../../components/soya-component/dashboard/common/ActionTab/ActionTab.js';
+import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
+import Account from './componentInTabView/AccountComponent/AccountComponent.js';
+import Role from './componentInTabView/RoleComponent/RoleComponent.js';
+import ActionTab from '../../../../components/soya-component/dashboard/common/ActionTab/ActionTab.js';
 
 // const FORM_ID = 'contact';
 const required = function required(value) {

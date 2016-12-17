@@ -3,19 +3,19 @@ import ReactRenderer from 'soya/lib/page/react/ReactRenderer';
 import register from 'soya/lib/client/Register';
 import RenderResult from 'soya/lib/page/RenderResult';
 import React from 'react';
-import {routeRequirement} from '../../../shared/routeRequirement.js';
+import {routeRequirement} from '../../../../shared/routeRequirement.js';
 import Form from 'soya/lib/data/redux/form/Form';
 
 // component
-import Navbar from '../../../components/zetta/Navbar/Navbar.js';
-import Button from '../../../components/soya-component/dashboard/common/Button/Button.js';
-import TextBox from '../../../components/soya-component/dashboard/common/FormControl/TextBox/TextBox.js';
-import TextArea from '../../../components/soya-component/dashboard/common/FormControl/TextArea/TextArea.js';
-import Radio from '../../../components/soya-component/dashboard/common/FormControl/Radio/Radio.js';
-import Dropdown from '../../../components/soya-component/dashboard/common/FormControl/Dropdown/Dropdown.js';
-import PageNotificationThumbnail from '../../../components/soya-component/dashboard/common/PageNotification/ComponentThumbnail.js';
-import { PageNotificationAction } from '../../../components/soya-component/dashboard/common/PageNotification/PageNotification.js';
-import Breadcrumb from '../../../components/zetta/Breadcrumb/Breadcrumb.js';
+import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
+import Button from '../../../../components/soya-component/dashboard/common/Button/Button.js';
+import TextBox from '../../../../components/soya-component/dashboard/common/FormControl/TextBox/TextBox.js';
+import TextArea from '../../../../components/soya-component/dashboard/common/FormControl/TextArea/TextArea.js';
+import Radio from '../../../../components/soya-component/dashboard/common/FormControl/Radio/Radio.js';
+import Dropdown from '../../../../components/soya-component/dashboard/common/FormControl/Dropdown/Dropdown.js';
+import PageNotificationThumbnail from '../../../../components/soya-component/dashboard/common/PageNotification/ComponentThumbnail.js';
+import { PageNotificationAction } from '../../../../components/soya-component/dashboard/common/PageNotification/PageNotification.js';
+import Breadcrumb from '../../../../components/zetta/Breadcrumb/Breadcrumb.js';
 
 const FORM_ID = 'addSupplierForm';
 const required = function required(value) {

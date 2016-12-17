@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get("/supplierList", (req, res, next) => {
-	fs.readFile(baseDir+"/../database/Suppliers.json", 'utf8', (err, data) => {
+	fs.readFile(baseDir+"/../database/Supplier.json", 'utf8', (err, data) => {
 	 		const suppliers = JSON.parse(data);
 	 		const supplierNames = suppliers.map(s => {
 	 			return {
@@ -29,7 +29,7 @@ router.get("/supplierList", (req, res, next) => {
 });
 
 router.get("/supplierListWithManager", (req, res) => {
-	fs.readFile(baseDir+"/../database/Suppliers.json", 'utf8', (err, data) => {
+	fs.readFile(baseDir+"/../database/Supplier.json", 'utf8', (err, data) => {
 	 		const suppliers = JSON.parse(data);
 	 		const supplierListWithManager = suppliers.map(s => {
 	 			return {
@@ -45,7 +45,7 @@ router.get("/supplierListWithManager", (req, res) => {
 
 router.get("/supplier/:supplierName", (req, res) => {
 	 const supplierName = req.params.supplierName;
-	 fs.readFile(baseDir+"/../database/Suppliers.json", 'utf8', (err, data) => {
+	 fs.readFile(baseDir+"/../database/Supplier.json", 'utf8', (err, data) => {
 	 		const suppliers = JSON.parse(data);
 	 		const selectedSupplier = suppliers.filter(s => s.supplier_name === supplierName)[0];
 	 		console.log(selectedSupplier)
@@ -55,7 +55,7 @@ router.get("/supplier/:supplierName", (req, res) => {
 
 router.get("/products/:supplierName", (req, res) => {
 	const supplierName = req.params.supplierName;
-	fs.readFile(baseDir+"/../database/Suppliers.json", "utf8", (err,data) => {
+	fs.readFile(baseDir+"/../database/Supplier.json", "utf8", (err,data) => {
 		const suppliers = JSON.parse(data);
 		const selectedSupplier = suppliers.filter(s => s.supplierName === supplierName)[0];
 
@@ -66,7 +66,7 @@ router.get("/products/:supplierName", (req, res) => {
 router.get("/products/:supplierName/:productName", (req, res) => {
 	const supplierName = req.params.supplierName;
 	const productName = req.params.productName;
-	fs.readFile(baseDir+"/../database/Suppliers.json", 'utf8', (err, data) => {
+	fs.readFile(baseDir+"/../database/Supplier.json", 'utf8', (err, data) => {
 		const suppliers = JSON.parse(data);
 		const selectedSupplier = suppliers.filter(s => s.supplierName === supplierName)[0];
 		const selectedProduct = selectedSupplier.products.filter(p => p['product_name'] === productName)[0];

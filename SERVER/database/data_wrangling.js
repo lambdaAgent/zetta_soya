@@ -52,7 +52,7 @@ fs.readFile("./sales_list3.json", 'utf8', (err, sales_json3) => {
 				supplier.marketManager = marketManagers.splice( Math.floor(Math.random() * marketManagers.length-1), 1)[0];
 			});
 
-			fs.writeFile('Suppliers.json', JSON.stringify(suppliers), (err) => {
+			fs.writeFile('Supplier.json', JSON.stringify(suppliers), (err) => {
 				if(err) console.error(err);
 			})
 
