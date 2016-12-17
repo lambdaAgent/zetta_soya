@@ -22,13 +22,19 @@ PRODUCT:
   page: src/pages/Suppliers/ProductDetail/ProductDetailPage.js
   nodes:
     - [method, GET]
-    - [path, /products]
+    - [path, /suppliers/:supplierName/products/:productName]
+
+PRODUCT_DETAIL:
+  page: src/pages/Suppliers/ProductDetail/ProductDetailPage.js
+  nodes:
+    - [method, GET]
+    - [path, /suppliers/:supplierName/products/:productName]
 
 PRODUCT_ADD:
   page: src/pages/Suppliers/ProductPage/ProductAddPage.js
   nodes:
     - [method, GET]
-    - [path, /products/add]
+    - [path, /suppliers/:supplierName/products/:productName/add]
 
 # ---------------------------------- suppliers ----------------------------------
 SUPPLIER:

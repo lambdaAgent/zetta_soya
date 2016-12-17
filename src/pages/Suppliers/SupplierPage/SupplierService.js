@@ -1,8 +1,6 @@
-
 import Service from 'soya/lib/data/redux/Service';
+import {baseUrl} from '../../../shared/routeRequirement.js';
 
-
-const baseUrl = 'http://localhost:3000';
 
 export default class dashboardService extends Service {
   static id() {
@@ -19,5 +17,17 @@ export default class dashboardService extends Service {
     })
   }
 
-
+  fetchSupplierByName(supplierName){
+    return new Promise((resolve, reject) => {
+      fetch(baseUrl + '/supplier/' + supplierName)
+        .then(res => {
+          console.log('fetch supplier', res);
+          return res.json()
+        })
+        .then(res => {
+          console.log('fetch supplier', res);
+          resolve({supplierDetail: res});
+        })
+    })
+  }
 }

@@ -53,5 +53,26 @@ router.get("/supplier/:supplierName", (req, res) => {
 	 })
 });
 
+router.get("/products/:supplierName", (req, res) => {
+	const supplierName = req.params.supplierName;
+	fs.readFile(baseDir+"/../database/Suppliers.json", "utf8", (err,data) => {
+		const suppliers = JSON.parse(data);
+		const selectedSupplier = suppliers.filter(s => s.supplierName === supplierName)[0];
+
+		res.json(selectedSupplier.products);
+	});
+});
+
+router.get("/products/:supplierName/:productName", (req, res) => {
+	const supplierName = req.params.supplierName;
+	const productName = req.params.productName;
+	fs.readFile(baseDir+"/../database/Suppliers.json", 'utf8', (err, data) => {
+		const suppliers = JSON.parse(data);
+		const selectedSupplier = suppliers.filter(s => s.supplierName === supplierName)[0];
+		const selectedProduct = selectedSupplier.products.filter(p => p['product_name'] === productName)[0];
+		res.json(selectedProduct);
+	});
+});
+
 
 module.exports = router;

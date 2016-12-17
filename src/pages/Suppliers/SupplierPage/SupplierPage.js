@@ -5,7 +5,6 @@ import register from 'soya/lib/client/Register';
 import RenderResult from 'soya/lib/page/RenderResult';
 import connect from 'soya/lib/data/redux/connect';
 import {routeRequirement} from '../../../shared/routeRequirement.js';
-import Form from 'soya/lib/data/redux/form/Form';
 
 import SupplierSegment from './SupplierSegment.js';
 
@@ -32,7 +31,7 @@ class Component extends React.Component {
   }
   componentWillMount(){
     this.actions = this.props.context.store.register(SupplierSegment);
-    this.form = new Form(this.props.context.store, FORM_ID);
+    // this.form = new Form(this.props.context.store, FORM_ID);
     this.props.context.store.dispatch(this.actions.getSupplierListWithMarketManager());
   }
   static getSegmentDependencies() {

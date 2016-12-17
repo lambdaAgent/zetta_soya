@@ -40,8 +40,10 @@ fs.readFile("./sales_list3.json", 'utf8', (err, sales_json3) => {
 
 			//add status::boolean to each of newProduct
 			const bool = [true, false];
-			newProduct = newProduct.map(p => p.status = bool[Math.floor(Math.random())]);
-
+			newProduct = newProduct.map(p => {
+				p.status = bool[Math.floor(Math.random())];
+				return p;
+			}) 
 
 			//make new Products.json file?
 

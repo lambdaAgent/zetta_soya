@@ -6,6 +6,7 @@ import SupplierService from './SupplierService.js';
 
 const ID = 'suppliers_segment';
 const FETCH_SUPPLIERS_WITH_MANAGER = `${ID}.fetch_supplier_with_manager`;
+const FETCH_SUPPLIER_BY_NAME = `${ID}.fetch_supplier_by_name`;
 
 const actionCreator = {
   getSupplierListWithMarketManager(){
@@ -23,6 +24,21 @@ const actionCreator = {
     };
     return load;
   },
+  getSupplierByName(supplierName){
+    let load = new Load(ID);
+    load.func = (dispatch, queryFunc, services) => {
+      let _service = services[SupplierService.id()];
+      return new Promise((resolve, reject) => {
+        // Use the service to fetch data.
+        _service.fetchSupplierByName(supplierName).then((data) => {
+          // Set the data to segment state.
+          dispatch({type: FETCH_SUPPLIER_BY_NAME, data:data});
+          resolve();
+        }).catch(reject);
+      });
+    };
+    return load;
+  }
 };
 
 const reducer = function(state, action) {
@@ -30,6 +46,10 @@ const reducer = function(state, action) {
   if (state == null) state = {};
   switch (action.type) {
     case FETCH_SUPPLIERS_WITH_MANAGER:
+      state = Object.assign({}, state, action.data);
+      break;
+    case FETCH_SUPPLIER_BY_NAME:
+
       state = Object.assign({}, state, action.data);
       break;
   }

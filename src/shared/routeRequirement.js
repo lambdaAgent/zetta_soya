@@ -7,6 +7,7 @@ const routeRequirement = [
   'ACCOUNT_ADD',
   'TRANSACTION',
   'PRODUCT',
+  'PRODUCT_DETAIL',
   'PRODUCT_ADD',
 
 ];
@@ -34,7 +35,10 @@ const navbarContent = [
   },
 ];
 
+const baseUrl = 'http://localhost:3000';
+
 export default {
+  baseUrl,
   routeRequirement,
   routeConstant,
   navbarContent

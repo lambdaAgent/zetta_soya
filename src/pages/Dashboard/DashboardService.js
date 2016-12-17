@@ -30,11 +30,9 @@ export default class dashboardService extends Service {
     return new Promise((resolve, reject) => {
       fetch(baseUrl + '/supplier/' + supplierName)
         .then(res => {
-          console.log('fetch supplier', res);
           return res.json()
         })
         .then(res => {
-          console.log('fetch supplier', res);
           resolve({supplier: res});
         })
     })

@@ -72,8 +72,6 @@ class Dashboard extends React.Component {
   }
 
   render(){
-    console.log(this.props);
-    debugger;
     const supplierNames = this.props.result.supplierNames || [];
     const supplierSelected = this.props.result.supplier;
     const supplierProducts = !supplierSelected ? [] : supplierSelected.products.map(p => {
