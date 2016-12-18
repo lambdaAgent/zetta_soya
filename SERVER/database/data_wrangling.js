@@ -8,7 +8,7 @@ fs.readFile("./sales_list3.json", 'utf8', (err, sales_json3) => {
 
 	fs.readFile('./marketManager.json', 'utf8', (err, marketManager_json) => {
 	fs.readFile('./products.json', 'utf8', (err, products_json) => {
-		fs.readFile('./supplier.json', 'utf8', (err, supplier_json) => {
+		fs.readFile('./supplier_raw.json', 'utf8', (err, supplier_json) => {
 
 			const products = JSON.parse(products_json)
 			let sales1 = JSON.parse(sales_json1);
