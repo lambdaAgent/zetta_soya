@@ -3,15 +3,15 @@ var router = express.Router();
 const fs = require('fs');
 const path = require('path');
 const baseDir = path.join(__dirname, '');
-console.log(baseDir+'../database')
+
+const suppliers = JSON.parse(fs.readFileSync(baseDir+'/../database/Suppliers.json', 'utf8'));
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
 router.get("/supplierList", (req, res, next) => {
-	fs.readFile(baseDir+"/../database/Suppliers.json", 'utf8', (err, data) => {
-	 		const suppliers = JSON.parse(data);
 	 		const supplierNames = suppliers.map(s => {
 	 			return {
 	 				label: s.supplier_name,
@@ -25,12 +25,27 @@ router.get("/supplierList", (req, res, next) => {
 	 		//}]
 	 		
 	 		res.json(supplierNames);
- })
+});
+
+router.delete("/supplier/:supplierName", (req, res) => {
+	const supplierTobeDeleted = req.params.supplierName;
+	suppliers.map((s, index) => {
+		if(s.supplier_name === supplierTobeDeleted){
+			suppliers.splice(index, 1);
+		}
+	});
+	const supplierListWithManager = suppliers.map(s => {
+	 			return {
+	 				supplierName:s.supplier_name,
+	 				marketManager: s.marketManager.first_name + ' ' + s.marketManager.last_name,
+	 				_id: s.id
+	 			};
+	 		})
+	 		
+	 		res.json(supplierListWithManager);
 });
 
 router.get("/supplierListWithManager", (req, res) => {
-	fs.readFile(baseDir+"/../database/Suppliers.json", 'utf8', (err, data) => {
-	 		const suppliers = JSON.parse(data);
 	 		const supplierListWithManager = suppliers.map(s => {
 	 			return {
 	 				supplierName:s.supplier_name,
@@ -40,38 +55,28 @@ router.get("/supplierListWithManager", (req, res) => {
 	 		})
 	 		
 	 		res.json(supplierListWithManager);
- })
 });
 
 router.get("/supplier/:supplierName", (req, res) => {
-	 const supplierName = req.params.supplierName;
-	 fs.readFile(baseDir+"/../database/Suppliers.json", 'utf8', (err, data) => {
-	 		const suppliers = JSON.parse(data);
-	 		const selectedSupplier = suppliers.filter(s => s.supplier_name === supplierName)[0];
-	 		console.log(selectedSupplier)
-	 		res.json(selectedSupplier);
-	 })
+	const supplierName = req.params.supplierName;
+	const selectedSupplier = suppliers.filter(s => s.supplier_name === supplierName)[0];
+	console.log(selectedSupplier)
+	res.json(selectedSupplier);
 });
 
 router.get("/products/:supplierName", (req, res) => {
 	const supplierName = req.params.supplierName;
-	fs.readFile(baseDir+"/../database/Suppliers.json", "utf8", (err,data) => {
-		const suppliers = JSON.parse(data);
-		const selectedSupplier = suppliers.filter(s => s.supplierName === supplierName)[0];
+	const selectedSupplier = suppliers.filter(s => s.supplierName === supplierName)[0];
 
-		res.json(selectedSupplier.products);
-	});
+	res.json(selectedSupplier.products);
 });
 
 router.get("/products/:supplierName/:productName", (req, res) => {
 	const supplierName = req.params.supplierName;
 	const productName = req.params.productName;
-	fs.readFile(baseDir+"/../database/Suppliers.json", 'utf8', (err, data) => {
-		const suppliers = JSON.parse(data);
-		const selectedSupplier = suppliers.filter(s => s.supplierName === supplierName)[0];
-		const selectedProduct = selectedSupplier.products.filter(p => p['product_name'] === productName)[0];
-		res.json(selectedProduct);
-	});
+	const selectedSupplier = suppliers.filter(s => s.supplierName === supplierName)[0];
+	const selectedProduct = selectedSupplier.products.filter(p => p['product_name'] === productName)[0];
+	res.json(selectedProduct);
 });
 
 

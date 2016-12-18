@@ -50,11 +50,12 @@ class Component extends React.Component {
 
 
   render(){
+    const self = this;
     let showedComponent;
     //TODO data from server must be extended by extras
     let supplierListWithManager = (this.props.result.supplierWithManager && this.props.result.supplierWithManager.length > 0 ) ? this.props.result.supplierWithManager : [];
     supplierListWithManager = supplierListWithManager.map(s => {
-      s.action = <Button>remove</Button>;
+      s.action = <Button onClick={(e) => self.props.context.store.dispatch(self.actions.deleteSupplierByName(s.supplierName) ) }>remove</Button>;
       return s;
     });
 
@@ -62,7 +63,7 @@ class Component extends React.Component {
     return <div>
       <Navbar context={this.props.context} active={'SUPPLIERS'} />
       {/*TODO: change window.location.href to reverseRoute*/}
-      <Button onClick={(e) => window.location.href="/suppliers/add"}>Add New Suppliers</Button>
+      <Button onClick={(e) => this.props.context.router.reverseRoute('SUPPLIER_ADD')}>Add New Suppliers</Button>
 
       <SimpleTable
           tableBody={supplierListWithManager}

@@ -17,7 +17,7 @@ import React from 'react';
 // };
 
 const Breadcrumb = props => {
-  const path = props.path;
+  const path = props.path || '';
   const defaultDomain = 'http://localhost:4000';
   const workingUrl = props.domain ? path.split(props.domain+'/')[1] : path.split(defaultDomain+'/')[1];
   const decodePath = decodeURI(workingUrl).replace(' ', '');

@@ -7,6 +7,7 @@ import SupplierService from './SupplierService.js';
 const ID = 'suppliers_segment';
 const FETCH_SUPPLIERS_WITH_MANAGER = `${ID}.fetch_supplier_with_manager`;
 const FETCH_SUPPLIER_BY_NAME = `${ID}.fetch_supplier_by_name`;
+const DELETE_SUPPLIER_BY_NAME = `${ID}.delete_supplier_by_name`;
 
 const actionCreator = {
   getSupplierListWithMarketManager(){
@@ -38,6 +39,19 @@ const actionCreator = {
       });
     };
     return load;
+  },
+  deleteSupplierByName(supplierName){
+    let load = new Load(ID);
+    load.func = (dispatch, queryFunc, services) => {
+      let _service = services[SupplierService.id()];
+      return new Promise((resolve, reject) => {
+        _service.deleteSupplierByName(supplierName).then(data => {
+          dispatch({type: DELETE_SUPPLIER_BY_NAME, data: data});
+          resolve();
+        }).catch(reject);
+      });
+    }
+    return load;
   }
 };
 
@@ -49,7 +63,9 @@ const reducer = function(state, action) {
       state = Object.assign({}, state, action.data);
       break;
     case FETCH_SUPPLIER_BY_NAME:
-
+      state = Object.assign({}, state, action.data);
+      break;
+    case DELETE_SUPPLIER_BY_NAME:
       state = Object.assign({}, state, action.data);
       break;
   }

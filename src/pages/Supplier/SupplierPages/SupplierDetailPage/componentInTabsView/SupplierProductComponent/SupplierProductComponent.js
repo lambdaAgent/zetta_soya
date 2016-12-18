@@ -21,7 +21,8 @@ export default class SupplierProductComponent extends React.Component {
         <Button buttonSize={Button.SIZE.DEFAULT}
                 buttonStyle={Button.STYLE.PRIMARY}
                 handleClick={(e) => {
-                  window.location = this.props.context.router.reverseRoute('PRODUCT_ADD');
+                  // window.location = this.props.context.router.reverseRoute('PRODUCT_ADD');
+                  window.location = window.location.href + "/products/add";
                 }}
         >
           Add New Product

@@ -11,6 +11,7 @@ import { PageNotificationAction } from '../../../../components/soya-component/da
 import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
 import TextBox from '../../../../components/soya-component/dashboard/common/FormControl/TextBox/TextBox.js';
 import Button from '../../../../components/soya-component/dashboard/common/Button/Button.js';
+import Breadcrumb from '../../../../components/zetta/Breadcrumb/Breadcrumb.js';
 
 const FORM_ID = 'PRODUCT_ADD'
 
@@ -21,18 +22,18 @@ class Component extends React.Component {
     this.notification = new PageNotificationAction(this.props.context.reduxStore);
   }
 
+
   render(){
     return(
       <div>
         <Navbar context={this.props.context} active={'SUPPLIERS'}/>
-        Product Add New Item page
-        <h1>Add New Item</h1>
+        <Breadcrumb path={window ? window.location.href : ""} />
+        <h1>Add New Product</h1>
 
-        <label>Name Item</label>
+        <label>Nama Objek Wisata</label>
         <TextBox form={this._form} context={this.props.context}
                  name='item_name' placeholder="name item"/>
 
-        <Button>Add Item</Button>
       </div>
     );
   }

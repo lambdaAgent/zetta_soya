@@ -2,14 +2,14 @@ const routeRequirement = [
   'DASHBOARD',
   'LOGIN',
   'SUPPLIER',
+  'SUPPLIER_ADD',
+  'SUPPLIER_DETAIL',
   'ALLOTMENT',
   'ACCOUNT_MANAGEMENT',
   'ACCOUNT_ADD',
   'TRANSACTION',
-  'PRODUCT',
-  'PRODUCT_DETAIL',
   'PRODUCT_ADD',
-
+  'PRODUCT_DETAIL'
 ];
 
 let routeConstant = {};

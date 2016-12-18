@@ -58,7 +58,6 @@ class Component extends React.Component{
     return(
       <div>
         {/*TODO: all pages need notfication*/}
-        <Breadcrumb path={this.state.url} />
         <Navbar context={this.props.context} active={'SUPPLIERS'} />
         <ActionTab tabList={LIST_MENU}
                    defaultTabId={DEFAULT_TAB}

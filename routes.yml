@@ -18,11 +18,12 @@ DASHBOARD:
     - [path, /dashboard]
 
 # ---------------------------------- products ----------------------------------
-PRODUCT:
-  page: src/pages/Product/ProductPages/ProductDetailPage/ProductDetailPage.js
+
+PRODUCT_ADD:
+  page: src/pages/Product/ProductPages/ProductAddPage/ProductAddPage.js
   nodes:
     - [method, GET]
-    - [path, /suppliers/:supplierName/products/:productName]
+    - [path, /suppliers/:supplierName/products/add]
 
 PRODUCT_DETAIL:
   page: src/pages/Product/ProductPages/ProductDetailPage/ProductDetailPage.js
@@ -30,11 +31,6 @@ PRODUCT_DETAIL:
     - [method, GET]
     - [path, /suppliers/:supplierName/products/:productName]
 
-PRODUCT_ADD:
-  page: src/pages/Product/ProductPages/ProductAddPage/ProductAddPage.js
-  nodes:
-    - [method, GET]
-    - [path, /suppliers/:supplierName/products/:productName/add]
 
 # ---------------------------------- suppliers ----------------------------------
 SUPPLIER:

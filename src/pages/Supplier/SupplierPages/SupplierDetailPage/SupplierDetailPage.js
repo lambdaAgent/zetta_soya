@@ -76,7 +76,6 @@ class Component extends React.Component {
     let showedComponent;
     return <div>
       <Navbar context={this.props.context} active={'SUPPLIERS'} />
-      <Breadcrumb path={this.state.url} />
       <ActionTab tabList={LIST_MENU}
                  defaultTabId={DEFAULT_TAB}
                  handleTabClick={this.handleTabClick.bind(this)}

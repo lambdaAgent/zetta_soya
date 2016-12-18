@@ -30,4 +30,18 @@ export default class dashboardService extends Service {
         })
     })
   }
+
+  deleteSupplierByName(supplierName){
+    return new Promise((resolve, reject) => {
+      fetch(baseUrl + '/supplier/' + supplierName, {method: 'delete'})
+        .then(res => {
+          console.log('delete supplier ', res);
+          debugger;
+          return res.json()
+        })
+        .then(res => {
+          resolve({supplierWithManager: res})
+        })
+    })
+  }
 }
