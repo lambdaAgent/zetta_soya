@@ -23,7 +23,7 @@ PRODUCT_ADD:
   page: src/pages/Product/ProductPages/ProductAddPage/ProductAddPage.js
   nodes:
     - [method, GET]
-    - [path, /suppliers/:supplierName/products/add]
+    - [path, /suppliers/:supplierName/product/add]
 
 PRODUCT_DETAIL:
   page: src/pages/Product/ProductPages/ProductDetailPage/ProductDetailPage.js
@@ -43,7 +43,7 @@ SUPPLIER_ADD:
   page: src/pages/Supplier/SupplierPages/SupplierAddPage/SupplierAddPage.js
   nodes:
     - [method, GET]
-    - [path, /suppliers/add]
+    - [path, /supplier/add]
 
 SUPPLIER_DETAIL:
   page: src/pages/Supplier/SupplierPages/SupplierDetailPage/SupplierDetailPage.js

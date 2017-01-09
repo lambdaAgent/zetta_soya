@@ -11,10 +11,10 @@ export default class SupplierProductComponent extends React.Component {
 
   }
   render(){
-    const product = this.props.products.map(p => {
+    const product = Array.isArray(this.props.products) && this.props.products.length > 0 ? this.props.products.map(p => {
       p.product_price = formatCurrency(p.product_price);
       return p;
-    });
+    }) : [];
     return(
       <div>
         supplier product
@@ -38,9 +38,13 @@ export default class SupplierProductComponent extends React.Component {
             {field: 'action', label: 'Action'}
           ]}
           tableActionsObject={
-            {product_name: {onClick: (e) => {
-              const currentlySelectedSupplier = window.location.href.split("/").slice(-1)[0];
-              window.location.href = "/suppliers/"+currentlySelectedSupplier+'/products/'+this.props.title }}
+            {
+              product_name: {
+                onClick: (e) => {
+                  const currentlySelectedSupplier = window.location.href.split("/").slice(-1)[0];
+                  window.location.href = "/suppliers/" + currentlySelectedSupplier + '/products/' + this.props.title
+                }
+              }
             }
           }
         />

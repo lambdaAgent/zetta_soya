@@ -11,6 +11,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+
+
 router.get("/supplierList", (req, res, next) => {
 	 		const supplierNames = suppliers.map(s => {
 	 			return {
@@ -25,6 +27,28 @@ router.get("/supplierList", (req, res, next) => {
 	 		//}]
 	 		
 	 		res.json(supplierNames);
+});
+
+router.post('/supplier', (req, res) => {
+	console.log(req.body);
+	const newSupplier = {
+		supplier_name: req.body.companyName || "",
+		taxId: req.body.taxID || "",
+		owner: req.body.ownerName || "",
+		marketManager: {
+			first_name: req.body.marketManager ? req.body.marketManager.split(" ")[0]  : "",
+			last_name: req.body.marketManager ? req.body.marketManager.split(" ")[1] : ""
+		},
+		address: req.body.companyAddress || "",
+		mobileNumber: req.body.ownerMobileNumber || "",
+		email: req.body.ownerEmail || "",
+		category: req.body.businessCategory || "",
+		createdAt: '12/19/2016'  || ""
+	}
+	suppliers.push(newSupplier);
+	console.log(newSupplier);
+	console.log(suppliers[suppliers.length-1]);
+	res.json(newSupplier);
 });
 
 router.delete("/supplier/:supplierName", (req, res) => {

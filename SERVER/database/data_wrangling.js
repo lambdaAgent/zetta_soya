@@ -92,3 +92,6 @@ function convertSalesToTimestampSales(s, product_price){
 			total: s.amount * product_price
 		}}
 }
+
+
+

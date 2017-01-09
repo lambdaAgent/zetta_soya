@@ -1,37 +1,62 @@
 
 var itemScheam = {
+	name_item: String,
 	date: Date,
+	group_size: {
+		max_size: {
+			adult:Number,
+			child:Number
+		},
+		min_size: {
+			adult: Number,
+			child:Number
+		}
+	},
+	validity:{
+		start: Date,
+		end: Date
+	},
 	description: String,
-	refundable: {
+	refund_policy: {
 		status: [true, false],
-		limitDate: Date,
-		percentageRefund: Number
+		
+		limit_date: Date,
+		percentage_refund: Number
 	},
 	allotment: [{
 		date: Date,
-		ContractRole: {
+		contract_role: {
 			timeslot:[{
-				startHour: String,
-				endHour:String,
+				start_hour: String,
+				end_hour:String,
 				allotment_allocate: Number,
 				allotment_used: Number,
-				priceAdult: Number,
-				priceChildren: Number,
-			}]
+				price_adult: Number,
+				price_children: Number,
+			}],
+			sales: [{ //sales is not confirmed yet
+				timestamp: Number
+			}],
+			active_allotment_per_week: String
 		},
-		PublishRole: {
+		publish_role: {
 			timeslot: [{
-				startHour: String,
-				endHour: String,
+				start_hour: String,
+				end_hour: String,
 				allotment_allocate: Number,
 				allotment_used: Number,
-				priceAdult: Number,
-				priceChildren: Number
-			}]
+				price_adult: Number,
+				price_children: Number
+			}],
+			sales: [{
+				timestamp: Number
+			}],
+			active_allotment_per_week: String
 		}
 	}],
 	discount: {
 		discount_percentage: Number,
 		description: String,
-	}
+	},
+
 }

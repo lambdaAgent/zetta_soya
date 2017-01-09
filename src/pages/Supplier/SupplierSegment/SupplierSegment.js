@@ -8,6 +8,7 @@ const ID = 'suppliers_segment';
 const FETCH_SUPPLIERS_WITH_MANAGER = `${ID}.fetch_supplier_with_manager`;
 const FETCH_SUPPLIER_BY_NAME = `${ID}.fetch_supplier_by_name`;
 const DELETE_SUPPLIER_BY_NAME = `${ID}.delete_supplier_by_name`;
+const ADD_ONE_SUPPLIER = `${ID}.add_one_supplier`;
 
 const actionCreator = {
   getSupplierListWithMarketManager(){
@@ -32,7 +33,6 @@ const actionCreator = {
       return new Promise((resolve, reject) => {
         // Use the service to fetch data.
         _service.fetchSupplierByName(supplierName).then((data) => {
-          // Set the data to segment state.
           dispatch({type: FETCH_SUPPLIER_BY_NAME, data:data});
           resolve();
         }).catch(reject);
@@ -46,11 +46,26 @@ const actionCreator = {
       let _service = services[SupplierService.id()];
       return new Promise((resolve, reject) => {
         _service.deleteSupplierByName(supplierName).then(data => {
+          document.location.hash = 'successMessage=supplier_has_been_successfully_deleted';
           dispatch({type: DELETE_SUPPLIER_BY_NAME, data: data});
           resolve();
         }).catch(reject);
       });
-    }
+    };
+    return load;
+  },
+  addSupplierByName(form, router){
+    let load = new Load(ID);
+    load.func = (dispatch, queryFunc, services) => {
+      let _service = services[SupplierService.id()];
+      return new Promise((resolve, reject) => {
+        _service.postNewSupplier(form).then(data => {
+          var href = router.reverseRoute('SUPPLIER') + "#successMessage=suppliers_has_been_successfully_added";
+          window.location = href;
+          resolve();
+        }).catch(reject);
+      });
+    };
     return load;
   }
 };

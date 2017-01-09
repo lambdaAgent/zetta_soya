@@ -73,6 +73,7 @@ class PageNotification extends React.Component {
       this.props.getReduxStore(),
       this.props.getActionCreator(PageNotificationSegment.id())
     );
+    this.props.userHandleDismiss();
   }
 
   static get mode() {

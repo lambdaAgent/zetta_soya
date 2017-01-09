@@ -12,6 +12,8 @@ import SupplierSegment from '../../SupplierSegment/SupplierSegment.js';
 import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
 import Button from '../../../../components/soya-component/dashboard/common/Button/Button.js';
 import SimpleTable from '../../../../components/soya-component/dashboard/common/Table/SimpleTable/SimpleTable.js';
+import PageNotificationContainer, { PageNotificationAction } from '../../../../components/soya-component/dashboard/common/PageNotification/PageNotification.js';
+
 const FORM_ID = 'supplier';
 
 // let sampleSuppliers = [
@@ -33,7 +35,28 @@ class Component extends React.Component {
     this.actions = this.props.context.store.register(SupplierSegment);
     // this.form = new Form(this.props.context.store, FORM_ID);
     this.props.context.store.dispatch(this.actions.getSupplierListWithMarketManager());
+    this.notification = new PageNotificationAction(this.props.context.reduxStore);
   }
+  componentDidMount(){
+    function checkForHashString(window, notification)
+    {
+      const hashString = window.location.href.split('#')[1];
+      if(!hashString || hashString === "") return;
+      const errorMessage = hashString.indexOf('errorMessage=') >= 0;
+      const successMessage = hashString.indexOf('successMessage=') >= 0;
+      if (errorMessage) {
+        notification.showError(hashString.slice(0 + 'errorMessage='.length));
+      } else if (successMessage) {
+        notification.showSuccess(hashString.slice(0 + 'successMessage='.length));
+      }
+    }
+    checkForHashString(window, this.notification);
+    //add hash change event listener
+    var self = this;
+    window.onhashchange = () => checkForHashString(window, self.notification);
+
+  }
+
   static getSegmentDependencies() {
     return [SupplierSegment];
   }
@@ -46,8 +69,9 @@ class Component extends React.Component {
   handleTabClick(id){
     this.setState({showTabbed: id});
   }
-
-
+  handleNotificationClose(){
+    document.location.hash = "";
+  }
 
   render(){
     const self = this;
@@ -60,10 +84,18 @@ class Component extends React.Component {
     });
 
 
+
     return <div>
       <Navbar context={this.props.context} active={'SUPPLIERS'} />
       {/*TODO: change window.location.href to reverseRoute*/}
-      <Button onClick={(e) => this.props.context.router.reverseRoute('SUPPLIER_ADD')}>Add New Suppliers</Button>
+      <PageNotificationContainer context={this.props.context} userHandleDismiss={this.handleNotificationClose.bind(this)}/>
+
+
+
+      <Button onClick={(e) => {
+        console.log("click")
+        window.location = this.props.context.router.reverseRoute('SUPPLIER_ADD')
+      }}>Add New Suppliers</Button>
 
       <SimpleTable
           tableBody={supplierListWithManager}

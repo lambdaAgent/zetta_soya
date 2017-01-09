@@ -5,6 +5,7 @@ import RenderResult from 'soya/lib/page/RenderResult';
 import React from 'react';
 import {routeRequirement} from '../../../../shared/routeRequirement.js';
 import Form from 'soya/lib/data/redux/form/Form';
+import SupplierSegment from '../../SupplierSegment/SupplierSegment.js';
 
 // component
 import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
@@ -14,7 +15,7 @@ import TextArea from '../../../../components/soya-component/dashboard/common/For
 import Radio from '../../../../components/soya-component/dashboard/common/FormControl/Radio/Radio.js';
 import Dropdown from '../../../../components/soya-component/dashboard/common/FormControl/Dropdown/Dropdown.js';
 import PageNotificationThumbnail from '../../../../components/soya-component/dashboard/common/PageNotification/ComponentThumbnail.js';
-import { PageNotificationAction } from '../../../../components/soya-component/dashboard/common/PageNotification/PageNotification.js';
+import PageNotificationContainer, { PageNotificationAction } from '../../../../components/soya-component/dashboard/common/PageNotification/PageNotification.js';
 import Breadcrumb from '../../../../components/zetta/Breadcrumb/Breadcrumb.js';
 
 const FORM_ID = 'addSupplierForm';
@@ -27,12 +28,42 @@ const required = function required(value) {
 class Component extends React.Component {
   constructor(props){
     super(props);
-  }
-  componentWillMount(){
-    this._form = new Form(this.props.context.store, FORM_ID);
-    this.notification = new PageNotificationAction(this.props.context.reduxStore);
+    this.state = {url: ""};
+    this.submit = this.submit.bind(this);
 
   }
+  componentDidMount(){
+    this._form = new Form(this.props.context.store, FORM_ID);
+    this.actions = this.props.context.store.register(SupplierSegment);
+    this.notification = new PageNotificationAction(this.props.context.reduxStore);
+    this.setState({url: window.location.href});
+  }
+
+  submit(e){
+    const self = this;
+    let submittedForm = {};
+    let callback = function(result) {
+      if (result.isValid) {
+        self.props.context.store.dispatch(self.actions.addSupplierByName(submittedForm, self.props.context.router));
+        //if 200 then redirect
+      }
+    };
+
+    let formWideValidation = function(data) {
+      const errorMessages = validateEmptyInputs(data);
+      // if (errorMessages.length > 0) {
+      //   return {
+      //     isValid: false,
+      //     errorMessages: errorMessages
+      //   }
+      // }
+
+      submittedForm = data;
+      return {isValid: false, errorMessages:{}};
+    };
+    this._form.submit(callback, formWideValidation);
+  }
+
 
 
   render(){
@@ -52,20 +83,13 @@ class Component extends React.Component {
       {text: 'Permainan Air', value: 'permainanAir'},
       // {title: 'Lainnya____', value: ''} // this is supposed to be bind to the e.target.value
     ];
-    const breadcrumbPath = [{
-      title:'supplier', routerName:'SUPPLIER'
-    }, {
-      title: 'supplier abc', path:'/supplier/productname'
-    }, {
-      title: 'product', routerName: 'PRODUCT'
-    }];
-    let showedComponent;
-    //TODO data from server must be extended by extras
+
 
     return <div>
       <Navbar context={this.props.context} active={'SUPPLIERS'} />
-      <PageNotificationThumbnail context={this.props.context}/>
-      <Breadcrumb path={window.location.href} domain={'http://localhost:4000'} context={this.props.context} />
+      <PageNotificationContainer context={this.props.context}/>
+
+      {/*<Breadcrumb path={this.state.url} domain={'http://localhost:4000'} context={this.props.context} />*/}
       <h1>Create New Supplier</h1>
       <label>Company Name</label>
       <TextBox form={this._form} context={this.props.context}
@@ -97,14 +121,15 @@ class Component extends React.Component {
       <h4>payment??</h4>
 
       <label>Market Manager</label>
-      <Dropdown name="marketManager">
+      <Dropdown name="marketManager" form={this._form} context={this.props.context}>
         <option>{'Dimas'}</option>
         <option>{'how can this page has information about supplier?'}</option>
       </Dropdown>
-      <button  onClick={(e) => window.location.href="/suppliers" }>Save Supplier, if success ask server to redirect and send the message</button>
+      <button onClick={this.submit.bind(this)}>Save Supplier, if success ask server to redirect and send the message</button>
     </div>
   }
 }
+
 
 
 class SuppliersPage extends ReduxPage {
@@ -130,3 +155,18 @@ class SuppliersPage extends ReduxPage {
 
 register(SuppliersPage);
 export default SuppliersPage;
+
+
+function validateEmptyInputs(obj){
+  let errorMessages = [];
+  for (var key in obj){
+    if( !Boolean(obj[key]) ){
+      errorMessages.push({
+        fieldName: key,
+        messages: [`${key} cannot be empty`]
+      });
+    }
+  }
+
+  return errorMessages;
+}
