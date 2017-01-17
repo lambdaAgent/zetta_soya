@@ -4,11 +4,11 @@
 #    - [method, GET]
 #    - [path, /]
 
-LOGIN:
-  page: src/pages/Login/LoginPage.js
-  nodes:
-    - [method, GET]
-    - [path, /login]
+#LOGIN:
+#  page: src/pages/Login/LoginPage.js
+#  nodes:
+#    - [method, GET]
+#    - [path, /login]
 
 # --------------------------------- dashboard ----------------------------------
 DASHBOARD:
