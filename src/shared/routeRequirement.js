@@ -1,6 +1,7 @@
 const routeRequirement = [
   'DASHBOARD',
-  'LOGIN',
+  // 'LOGIN',
+  'PLAYGROUND',
   'SUPPLIER',
   'SUPPLIER_ADD',
   'SUPPLIER_DETAIL',

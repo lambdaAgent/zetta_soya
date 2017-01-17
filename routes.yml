@@ -4,11 +4,11 @@
 #    - [method, GET]
 #    - [path, /]
 
-#LOGIN:
-#  page: src/pages/Login/LoginPage.js
-#  nodes:
-#    - [method, GET]
-#    - [path, /login]
+PLAYGROUND:
+  page: src/pages/playgroundComponent/Playground.js
+  nodes:
+    - [method, GET]
+    - [path, /playground]
 
 # --------------------------------- dashboard ----------------------------------
 DASHBOARD:
