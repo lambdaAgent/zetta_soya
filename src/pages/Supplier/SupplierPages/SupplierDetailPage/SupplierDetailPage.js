@@ -14,20 +14,20 @@ import ActionTab from '../../../../components/soya-component/dashboard/common/Ac
 import Breadcrumb from '../../../../components/zetta/Breadcrumb/Breadcrumb.js';
 
 //segment, use supplierPage Segment
-import SupplierSegment from '../../SupplierSegment/SupplierSegment.js';
-import ProductSegment from '../../../Product/ProductSegment/ProductSegment.js';
+import SupplierSegment from '../../../../segmentsAndServices/SupplierSgmSrv/SupplierSegment.js';
+import ProductSegment from '../../../../segmentsAndServices/ProductSgmSrv/ProductSegment.js';
 
 const LIST_MENU = [
   {
     title: `Supplier's Product`,
-    id: 'supplier_product'
+    id: 'supplierProduct'
   },
   {
     title:`Supplier Detail`,
-    id:`supplier_detail`
+    id:`supplierDetail`
   }
 ];
-const DEFAULT_TAB = `supplier_product`;
+const DEFAULT_TAB = `supplierProduct`;
 // const supplierTableHeader = ['Supplier Name', 'Market Manager', 'Action'];
 // const FORM_ID = 'supplier';
 const required = function required(value) {
@@ -39,7 +39,11 @@ const required = function required(value) {
 class Component extends React.Component {
   constructor(props){
     super(props);
-    this.state = {showTabbed: LIST_MENU[0].id, url:''};
+    this.state = {showTabbed: DEFAULT_TAB, url:''};
+    this.tabView = {
+      [ LIST_MENU[0].id ]: <SupplierProduct context={this.props.context}/>,
+      [ LIST_MENU[1].id ]: <SupplierDetail supplierDetail={this.props.result.supplierDetail}/>
+    };
 
   }
   componentDidMount(){
@@ -55,24 +59,17 @@ class Component extends React.Component {
   }
 
   static subscribeQueries(props, subscribe) {
-    // subscribe(DashboardSegment.id(), props.userId, 'dashboard');
+    // subscribe(DashboardSgmSrv.id(), props.userId, 'dashboard');
     subscribe(SupplierSegment.id(), 'supplierDetail', 'supplierDetail');
     subscribe(ProductSegment.id(), 'products', 'products');
   }
 
   handleTabClick(id){
+    console.log(id);
     this.setState({showTabbed: id});
   }
 
   render(){
-    var self = this;
-    if('supplierDetail' in this.props.result && this.props.result.supplierDetail) {
-      self.tabView = {
-        [ LIST_MENU[0].id ]: <SupplierProduct products={this.props.result.supplierDetail.products} context={this.props.context}/>,
-        [ LIST_MENU[1].id ]: <SupplierDetail supplierDetail={this.props.result.supplierDetail}/>
-      };
-    }
-
     let showedComponent;
     return <div>
       <Navbar context={this.props.context} active={'SUPPLIERS'} />
@@ -84,6 +81,7 @@ class Component extends React.Component {
         this.tabView[this.state.showTabbed]
         : null
       }
+
     </div>
   }
 }

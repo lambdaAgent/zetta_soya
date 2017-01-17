@@ -1,21 +1,5 @@
 import React from 'react';
 
-
-// const Breadcrumb = props => {
-//   const path = props.path;
-//   const workingUrl = path.split(this.props.domain+'/')[1];
-//   const decodePath = decodeURI(workingUrl).replace(' ', '');
-//   const pathAsArray = decodePath.split('/');
-//
-//   return(
-//     <div>
-//       {
-//         pathAsArray.map()
-//       }
-//     </div>
-//   );
-// };
-
 const Breadcrumb = props => {
   const path = props.path || '';
   const defaultDomain = 'http://localhost:4000';
@@ -40,7 +24,7 @@ const Breadcrumb = props => {
             />
           }
           return <Link key={a+index} title={ a + ' > '}
-                       onClick={(e) => { window.location.href = createPath(pathAsArray, index) }}
+                       onClick={(e) => { window.location = createPath(pathAsArray, index) }}
                  />
 
         })

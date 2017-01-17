@@ -1,6 +1,5 @@
 const formatCurrency = function(currency){
   currency = String(currency.toFixed(0));
-  console.log(currency)
   //loop from right
   let result = '';
   let numberWithoutComma = '';
@@ -13,9 +12,3 @@ const formatCurrency = function(currency){
   }
   return result;
 };
-
-console.log( formatCurrency(15000) );
-console.log( formatCurrency(150000) );
-console.log( formatCurrency(1500000) );
-console.log( formatCurrency(15000000) );
-console.log( formatCurrency(150000000) );

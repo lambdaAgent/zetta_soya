@@ -6,7 +6,7 @@ import RenderResult from 'soya/lib/page/RenderResult';
 import connect from 'soya/lib/data/redux/connect';
 import {routeRequirement} from '../../../../shared/routeRequirement.js';
 
-import SupplierSegment from '../../SupplierSegment/SupplierSegment.js';
+import SupplierSegment from '../../../../segmentsAndServices/SupplierSgmSrv/SupplierSegment.js';
 
 // component
 import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
@@ -23,7 +23,8 @@ const FORM_ID = 'supplier';
 //     _id: '1234ds',
 //   }
 // ];
-
+//TODO: if every comment does not use connect, remember to unsubscribe when unmount.
+//TODO: actually, just unsubscribe for each components
 
 
 class Component extends React.Component {
@@ -62,7 +63,7 @@ class Component extends React.Component {
   }
 
   static subscribeQueries(props, subscribe) {
-    // subscribe(DashboardSegment.id(), props.userId, 'dashboard');
+    // subscribe(DashboardSgmSrv.id(), props.userId, 'dashboard');
     subscribe(SupplierSegment.id(), 'supplierWithManager', 'supplierWithManager');
   }
 
@@ -76,12 +77,18 @@ class Component extends React.Component {
   render(){
     const self = this;
     let showedComponent;
-    //TODO data from server must be extended by extras
-    let supplierListWithManager = (this.props.result.supplierWithManager && this.props.result.supplierWithManager.length > 0 ) ? this.props.result.supplierWithManager : [];
-    supplierListWithManager = supplierListWithManager.map(s => {
-      s.action = <Button onClick={(e) => self.props.context.store.dispatch(self.actions.deleteSupplierByName(s.supplierName) ) }>remove</Button>;
-      return s;
-    });
+    // let supplierListWithManager = (this.props.result.supplierWithManager && this.props.result.supplierWithManager.length > 0 ) ? this.props.result.supplierWithManager : [];
+    // supplierListWithManager = supplierListWithManager.map(s => {
+    //   s.action = <Button onClick={(e) => self.props.context.store.dispatch(self.actions.deleteSupplierByName(s.supplierName) ) }>remove</Button>;
+    //   return s;
+    // });
+    const supplierListWithManager = [
+      {
+        supplierName: <a onClick={ (e) => { window.location.href = "/suppliers/"+e.target.value} }>'PT. something'</a>,
+        marketManager: 'Dimas',
+        _id: '1234ds',
+      }
+    ];
 
 
 
@@ -93,7 +100,6 @@ class Component extends React.Component {
 
 
       <Button onClick={(e) => {
-        console.log("click")
         window.location = this.props.context.router.reverseRoute('SUPPLIER_ADD')
       }}>Add New Suppliers</Button>
 
@@ -105,7 +111,7 @@ class Component extends React.Component {
             {field: 'action', label: 'Action'}
           ]}
           tableActionsObject={
-            {supplierName: {onClick: (e) => { window.location.href = "/suppliers/"+this.props.title }}}
+            {supplierName: {onClick: (e) => { window.location.href = "/suppliers/"+id }}}
           }
       />
     </div>

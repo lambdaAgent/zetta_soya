@@ -17,20 +17,26 @@ DASHBOARD:
     - [method, GET]
     - [path, /dashboard]
 
-# ---------------------------------- products ----------------------------------
+# ---------------------------------- items -------------------------------------
+ITEM_ADD:
+  page: src/pages/Item/ItemAddPage/ItemAddPage.js
+  nodes:
+    - [method, GET]
+    - [path, /item/add]
 
+
+# ---------------------------------- products ----------------------------------
 PRODUCT_ADD:
   page: src/pages/Product/ProductPages/ProductAddPage/ProductAddPage.js
   nodes:
     - [method, GET]
-    - [path, /suppliers/:supplierName/product/add]
+    - [path, /product/add]
 
 PRODUCT_DETAIL:
-  page: src/pages/Product/ProductPages/ProductDetailPage/ProductDetailPage.js
+  page: src/pages/Product/ProductPages/ProductMainPage/ProductMainPage.js
   nodes:
     - [method, GET]
-    - [path, /suppliers/:supplierName/products/:productName]
-
+    - [path, /product/detail]
 
 # ---------------------------------- suppliers ----------------------------------
 SUPPLIER:
@@ -49,7 +55,7 @@ SUPPLIER_DETAIL:
   page: src/pages/Supplier/SupplierPages/SupplierDetailPage/SupplierDetailPage.js
   nodes:
     - [method, GET]
-    - [path, /suppliers/:supplierName]
+    - [path, /supplier/detail]
 
 # ---------------------------------- allotment ----------------------------------
 ALLOTMENT:
@@ -70,7 +76,6 @@ ACCOUNT_ADD:
   nodes:
     - [method, GET]
     - [path, /accountManagement/add]
-
 
 TRANSACTION:
   page: src/pages/Transaction/TransactionPages/TransactionMainPage/TransactionMainPage.js

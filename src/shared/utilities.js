@@ -5,7 +5,7 @@ const formatCurrency = function(currency){
   let numberWithoutComma = '';
   for (var i=currency.length-1; i >= 0; i--){
     numberWithoutComma = currency[i] + numberWithoutComma;
-    resultWithThousandSeparator = currency[i] + resultWithThousandSeparator;
+    resultWithThousa9ndSeparator = currency[i] + resultWithThousandSeparator;
     if (numberWithoutComma.length % 3 === 0 &&  i !== 0){
       resultWithThousandSeparator = '.' + resultWithThousandSeparator;
     }

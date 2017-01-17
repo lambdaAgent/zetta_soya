@@ -7,7 +7,7 @@ import connect from 'soya/lib/data/redux/connect';
 import {routeRequirement} from '../../../../shared/routeRequirement.js';
 import Form from 'soya/lib/data/redux/form/Form';
 
-import DashboardSegment from '../../DashboardSegment/DashboardSegment.js';
+import DashboardSegment from '../../../../segmentsAndServices/DashboardSgmSrv/DashboardSegment.js';
 import rd3 from 'react-d3-library';
 const RD3Component = rd3.Component;
 
@@ -37,7 +37,7 @@ class Dashboard extends React.Component {
   }
 
   static subscribeQueries(props, subscribe) {
-    // subscribe(DashboardSegment.id(), props.userId, 'dashboard');
+    // subscribe(DashboardSgmSrv.id(), props.userId, 'dashboard');
     subscribe(DashboardSegment.id(), props.supplierNames, 'supplierNames');
     subscribe(DashboardSegment.id(), 'supplier', 'supplier');
   }

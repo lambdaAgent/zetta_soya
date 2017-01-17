@@ -1,3 +1,6 @@
 [submodule "soya-component"]
-  path = src/components/soya-component
-  url = ssh://git@codereview.traveloka.com:2222/diffusion/SOYACOMP/soya-component.git
+	path = soya-component
+	url = ssh://git@codereview.traveloka.com:2222/diffusion/SOYACOMP/soya-component.git
+[submodule "src/components/soya-component"]
+	path = src/components/soya-component
+	url = ssh://git@codereview.traveloka.com:2222/diffusion/SOYACOMP/soya-component.git

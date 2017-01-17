@@ -3,11 +3,21 @@ import Button from '../../../../../../components/soya-component/dashboard/common
 import SimpleTable from '../../../../../../components/soya-component/dashboard/common/Table/SimpleTable/SimpleTable.js';
 import {formatCurrency} from '../../../../../../shared/utilities.js';
 
+const productsData = [
+  { // don't use types url, use reverseRoute instead
+    productName: <a onClick={ (e) => { window.location = `/suppliers/2/products/2`} }>'product something'</a>,
+    productPrice: 100,
+    status: true,
+    action: "action",
+    marketManager: 'Dimas',
+    _id: '1234ds',
+  }
+];
 
 export default class SupplierProductComponent extends React.Component {
   constructor(props){
     super(props);
-    this.state={};
+    this.state = {};
 
   }
   render(){
@@ -15,6 +25,7 @@ export default class SupplierProductComponent extends React.Component {
       p.product_price = formatCurrency(p.product_price);
       return p;
     }) : [];
+    console.log("product data >>> ", productsData);
     return(
       <div>
         supplier product
@@ -22,7 +33,7 @@ export default class SupplierProductComponent extends React.Component {
                 buttonStyle={Button.STYLE.PRIMARY}
                 handleClick={(e) => {
                   // window.location = this.props.context.router.reverseRoute('PRODUCT_ADD');
-                  window.location = window.location.href + "/products/add";
+                  window.location = window.location.href + "/product/add";
                 }}
         >
           Add New Product
@@ -30,10 +41,10 @@ export default class SupplierProductComponent extends React.Component {
 
         <br />
         <SimpleTable
-          tableBody={product}
+          tableBody={productsData}
           fields={[
-            {field: 'product_name', label: `Product Name`},
-            {field: 'product_price', label: 'product Price'},
+            {field: 'productName', label: `Product Name`},
+            {field: 'productPrice', label: 'product Price'},
             {field: 'status', label: 'status'},
             {field: 'action', label: 'Action'}
           ]}

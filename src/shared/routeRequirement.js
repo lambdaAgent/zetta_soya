@@ -9,18 +9,19 @@ const routeRequirement = [
   'ACCOUNT_ADD',
   'TRANSACTION',
   'PRODUCT_ADD',
-  'PRODUCT_DETAIL'
+  'PRODUCT_DETAIL',
+  'ITEM_ADD'
 ];
 
 let routeConstant = {};
-routeRequirement.map(r => {
-  routeConstant[r] = r;
-});
+for(let i=0; i<routeRequirement.length; i++){
+  routeConstant[routeRequirement[i]] = routeRequirement[i];
+}
 
 const navbarContent = [
-  {
-    title: 'Dashboard', path: 'DASHBOARD'
-  },
+  // {
+  //   title: 'Dashboard', path: 'DASHBOARD'
+  // },
   {
     title: 'Suppliers Data', path: 'SUPPLIER'
   },
@@ -35,6 +36,7 @@ const navbarContent = [
   },
 ];
 
+//TODO: baseURl is from this.config.apiUrl, do not use hardcode like below
 const baseUrl = 'http://localhost:3000';
 
 export default {

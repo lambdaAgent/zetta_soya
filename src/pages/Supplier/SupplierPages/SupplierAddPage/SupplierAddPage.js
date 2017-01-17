@@ -5,7 +5,7 @@ import RenderResult from 'soya/lib/page/RenderResult';
 import React from 'react';
 import {routeRequirement} from '../../../../shared/routeRequirement.js';
 import Form from 'soya/lib/data/redux/form/Form';
-import SupplierSegment from '../../SupplierSegment/SupplierSegment.js';
+import SupplierSegment from '../../../../segmentsAndServices/SupplierSgmSrv/SupplierSegment.js';
 
 // component
 import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
@@ -17,6 +17,7 @@ import Dropdown from '../../../../components/soya-component/dashboard/common/For
 import PageNotificationThumbnail from '../../../../components/soya-component/dashboard/common/PageNotification/ComponentThumbnail.js';
 import PageNotificationContainer, { PageNotificationAction } from '../../../../components/soya-component/dashboard/common/PageNotification/PageNotification.js';
 import Breadcrumb from '../../../../components/zetta/Breadcrumb/Breadcrumb.js';
+import ReactGoogleMap from '../../../../components/soya-component/dashboard/external/GoogleMaps/GoogleMaps.js';
 
 const FORM_ID = 'addSupplierForm';
 const required = function required(value) {
@@ -95,6 +96,10 @@ class Component extends React.Component {
       <TextBox form={this._form} context={this.props.context}
                name='companyName' placeholder='Type here to see demo...'/>
 
+      <ReactGoogleMap
+        apiKey={"please put example apiKey"}
+      />
+
       <label>TaxID NPWP/DKPP</label>
       <TextBox form={this._form} context={this.props.context}
                name='taxID' placeholder='Type here to see demo...'/>
@@ -114,11 +119,66 @@ class Component extends React.Component {
       <label>Owner Email</label>
       <TextBox form={this._form} context={this.props.context}
                name='ownerEmail' placeholder='Type here to see demo...'/>
-     <label>Business Category</label>
+      <label>Business Category</label>
       <Radio name='businessCategory' options={businessCategoryOptions} form={this._form} context={this.props.context} />
 
       <h4>TODO: Add other PIC, ask the team about details of this element</h4>
       <h4>payment??</h4>
+      <h1>PIC</h1>
+      <div> {/*This is another separate individual form */}
+        <pre><code>How to know the number of PIC?? use this.state? </code></pre>
+        <label>PIC Name</label>
+        <TextBox form={this.form} context={this.props.context}
+                 name="PICName" placeholder="type your name here"/>
+
+        <pre><code>This button will show notification to tell the use to fill current PIC first </code></pre>
+        <pre><code>Cannot add another PIC until the current PIC has all been field </code></pre>
+        <Button>Add Other PIC</Button>
+      </div>
+
+      <div style={{border: "1px solid black"}}>
+        Payment
+        Terms Of Payment
+        <Radio name='businessCategory' options={[{text: 'Daily' ,value: 'daily'}, {text: 'Weekly', value: 'weekly'}, {text: 'Monthly', value: 'monthly'}]} form={this._form} context={this.props.context} />
+        <div>
+          <label>Bank Name</label>
+
+          <div style={{display: 'flex'}}>
+            <div style={{width: "20%", display:"inline-block"}}>
+              <Dropdown defaultValue={'BCA'}
+                        form={this.form} context={this.props.context}>
+                <option>{'BCA'}</option>
+                <option>{'Mandiri'}</option>
+                <option>{'Other'}</option>
+              </Dropdown>
+            </div>
+
+            <div style={{width: "80%",display: 'inline-block'}}>
+              <TextBox form={this.form} context={this.props.context}></TextBox>
+            </div>
+          </div>
+
+
+          <label>Beneficiary Name</label>
+          <TextBox form={this.form} context={this.props.context}></TextBox>
+
+          <label>Bank Branch</label>
+          <TextBox form={this.form} context={this.props.context}></TextBox>
+
+          <label>Swift Code</label>
+          <TextBox form={this.form} context={this.props.context}></TextBox>
+
+          <label>Finance PIC Name</label>
+          <TextBox form={this.form} context={this.props.context}></TextBox>
+
+          <label>Mobile Number</label>
+          <TextBox form={this.form} context={this.props.context}></TextBox>
+
+          <label>Email</label>
+          <TextBox form={this.form} context={this.props.context}></TextBox>
+        </div>
+
+      </div>
 
       <label>Market Manager</label>
       <Dropdown name="marketManager" form={this._form} context={this.props.context}>

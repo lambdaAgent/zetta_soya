@@ -11,6 +11,7 @@ import connect from 'soya/lib/data/redux/connect';
 // component
 import Navbar from '../../../../components/zetta/Navbar/Navbar.js';
 import Dropdown from '../../../../components/soya-component/dashboard/common/FormControl/Dropdown/Dropdown.js';
+import Authorize from '../../../../components/soya-component/dashboard/common/Authorize/Authorize.js';
 
 // const FORM_ID = 'contact';
 const required = function required(value) {
@@ -20,7 +21,6 @@ const required = function required(value) {
 
 
 class Component extends React.Component {
-
   render(){
     return <div>
       <Navbar context={this.props.context} active={'ALLOTMENT'} />

@@ -2,11 +2,15 @@ import React from 'react';
 import {navbarContent} from "../../../shared/routeRequirement.js";
 
 /*
+ *  you can get the url by providing prop.context.router.reverseRoute() with these options:
  *
  */
 const Navbar = props => {
+  let URL = props.context.router.reverseRoute("SUPPLIER_DETAIL");
+  console.log(URL);
+  debugger;
   return(
-    <div style={{border: '1px solid blue'}}>
+    <div style={{border: '1px solid blue', backgroundColor: "white"}}>
       {
         navbarContent.map((content, index) => {
           return(

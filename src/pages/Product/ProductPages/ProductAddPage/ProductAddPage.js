@@ -27,7 +27,6 @@ class Component extends React.Component {
     return(
       <div>
         <Navbar context={this.props.context} active={'SUPPLIERS'}/>
-        <Breadcrumb path={window ? window.location.href : ""} />
         <h1>Add New Product</h1>
 
         <label>Nama Objek Wisata</label>
